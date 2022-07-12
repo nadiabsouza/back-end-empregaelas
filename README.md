@@ -1,6 +1,9 @@
 # Back-end-empregaelas
 
-<div align="center"> ![logoempregaelas](https://user-images.githubusercontent.com/102123328/178586700-ea0ba6fc-d475-4928-a325-03c226fc6445.jpeg) </div>
+<div align="center"> 
+![logoempregaelas](https://user-images.githubusercontent.com/102123328/178589692-c1fe7427-f1dc-45e0-bd50-3944b45c3098.jpeg)
+
+</div>
 
 <h4 align="center"> 
 🚀 Projeto integrador Digital House turma Serasa
