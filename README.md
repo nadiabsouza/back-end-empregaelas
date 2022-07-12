@@ -1,7 +1,7 @@
 # Back-end-empregaelas
 
-<div align="center"> 
-![logoempregaelas](https://user-images.githubusercontent.com/102123328/178589692-c1fe7427-f1dc-45e0-bd50-3944b45c3098.jpeg)
+<p align="center"> <img src = ![logoempregaelas](https://user-images.githubusercontent.com/102123328/178590099-fa13f6cc-f1d1-444f-aa67-bfb2d2cedcc9.jpeg)
+/> </p>
 
 </div>
 
