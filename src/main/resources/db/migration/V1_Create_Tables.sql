@@ -120,3 +120,5 @@ FOREIGN KEY (`id_candidato`) REFERENCES ee_candidato(id)
 ); 
 
 
+
+
