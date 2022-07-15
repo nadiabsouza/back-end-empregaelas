@@ -18,45 +18,50 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empregaelas.domain.entity.Candidato;
 import br.com.empregaelas.domain.vo.v1.CandidatoVO;
 import br.com.empregaelas.service.CandidatoService;
 
 @RestController
-@RequestMapping("/candidato/v1")
+@RequestMapping("/candidato")
 public class CandidatoController {
 	
 	@Autowired
 	CandidatoService service;
 	
+	//buscar todos
 	@RequestMapping(method= RequestMethod.GET,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value=HttpStatus.OK)
 	public List<CandidatoVO>findAll(){
-		return service.buscarTodos();
+		return service.findAll();
 	}
 	
+	//buscar por Id
 	@GetMapping(value = "/{id}", 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value=HttpStatus.OK)
 	public CandidatoVO findById(@PathVariable("id") Long id) {
-		return service.buscarPorId(id);
+		return service.findById(id);
 	}
 	
+	
+	//criar candidato
 	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value=HttpStatus.CREATED)
 	public CandidatoVO create (@Valid @RequestBody CandidatoVO candidato) {
-		return service.inserir(candidato);
+		return service.create(candidato);
 	}
 	
+	//atualizar candidato
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value=HttpStatus.OK)
 	public CandidatoVO update(@Valid @RequestBody CandidatoVO candidato) {
-		return service.atualizar(candidato);
+		return service.update(candidato);
 	}
 	
+	//deletar candidato
 	@DeleteMapping(value="/{id}")
 	@ResponseStatus(value=HttpStatus.OK)
 	public void delete(@PathVariable("id")Long id) {
