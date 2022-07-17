@@ -8,9 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -36,6 +38,21 @@ public class Empresa implements Serializable{
 		@Column(name="cnpj")
 		private String cnpj;
 		
+		@NotBlank
+		@Size(max = 50)
+		@Column(name = "senha")
+		private String senha;
+
+		@NotBlank
+		@Size(max = 50)
+		@Column(name = "tipo_permissao")
+		private USER_PERMISSIONS tipoPermissao;
+		
+		@NotBlank
+		@Size(max = 50)
+		@Email
+		@Column(name = "email")
+		private String email;
 		
 		@NotBlank
 		@Size(max=60)

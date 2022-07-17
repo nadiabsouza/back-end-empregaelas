@@ -24,49 +24,43 @@ import br.com.empregaelas.service.CandidatoService;
 @RestController
 @RequestMapping("/candidato")
 public class CandidatoController {
-	
+
 	@Autowired
 	CandidatoService service;
-	
-	//buscar todos
-	@RequestMapping(method= RequestMethod.GET,
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(value=HttpStatus.OK)
-	public List<CandidatoVO>findAll(){
+
+	// buscar todos
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(value = HttpStatus.OK)
+	public List<CandidatoVO> findAll() {
 		return service.findAll();
 	}
-	
-	//buscar por Id
-	@GetMapping(value = "/{id}", 
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(value=HttpStatus.OK)
+
+	// buscar por Id
+	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO findById(@PathVariable("id") Long id) {
 		return service.findById(id);
 	}
-	
-	
-	//criar candidato
-	@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(value=HttpStatus.CREATED)
-	public CandidatoVO create (@Valid @RequestBody CandidatoVO candidato) {
+
+	// criar candidato
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(value = HttpStatus.CREATED)
+	public CandidatoVO create(@Valid @RequestBody CandidatoVO candidato) {
 		return service.create(candidato);
 	}
-	
-	//atualizar candidato
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, 
-			produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(value=HttpStatus.OK)
+
+	// atualizar candidato
+	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO update(@Valid @RequestBody CandidatoVO candidato) {
 		return service.update(candidato);
 	}
-	
-	//deletar candidato
-	@DeleteMapping(value="/{id}")
-	@ResponseStatus(value=HttpStatus.OK)
-	public void delete(@PathVariable("id")Long id) {
+
+	// deletar candidato
+	@DeleteMapping(value = "/{id}")
+	@ResponseStatus(value = HttpStatus.OK)
+	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);
 	}
-	
-	
+
 }

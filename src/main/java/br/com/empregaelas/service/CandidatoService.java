@@ -57,8 +57,6 @@ public class CandidatoService {
 		var entity = repository.findById(candidato.getId())
 				.orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado registro com esse Id"));
 		
-		
-		
 		entity.setNome(candidato.getNome()); 
 		entity.setCpf(candidato.getCpf());
 	    entity.setNomeSocial(candidato.getNomeSocial());
@@ -74,17 +72,8 @@ public class CandidatoService {
 		entity.setIdioma(candidato.getIdioma());
 		entity.setPretensaoSalarial(candidato.getPretensaoSalarial());
 		entity.setDataCadastro(candidato.getDataCadastro());
-	
 		
 		var vo = DozerConverter.parseObject(repository.save(entity), CandidatoVO.class);
 		return vo;
-	}
-
-	
-	
-	
+	}	
 }
-
-
-
-

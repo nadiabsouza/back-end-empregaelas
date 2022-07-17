@@ -13,101 +13,106 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="ee_candidato")
+@Table(name = "ee_candidato")
 @Data
 @NoArgsConstructor
-public class Candidato implements Serializable{
-	
+public class Candidato implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private long id;
-	
-	
-	@NotBlank
-	@Size(max=11)
-	@Column(name="cpf")
-	private String cpf;
-	
-	
-	@NotBlank
-	@Size(max=60)
-	@Column(name="nome")
-	private String nome;
-	
-	@NotBlank
-	@Size(max=20)
-	@Column(name="nomesocial")
-	private String nomeSocial;
-	
-	
-	@Column(name="datanasc")
-	private Date dataNasc;
-	
-	
-	@NotBlank
-	@Size(max=15)
-	@Column(name="estadocivil")
-	private String estadoCivil;
-	
-	@NotBlank
-	@Size(max=50)
-	@Column(name="linkedin")
-	private String linkedin;
-	
-	@NotBlank
-	@Size(max=50)
-	@Column(name="github")
-	private String gitHub;
-	
-	@NotBlank
-	@Size(max=50)
-	@Column(name="portfolio")
-	private String portfolio;
-	
-	@NotBlank
-	@Size(max=10)
-	@Column(name="raca")
-	private String raca;
-	
-	@NotBlank
-	@Size(max=20)
-	@Column(name="genero")
-	private String genero;
-	
-	@NotBlank
-	@Size(max=9)
-	@Column(name="sexobio")
-	private String sexoBio;
-	
-	@NotBlank
-	@Size(max=255)
-	@Column(name="sobre")
-	private String sobre;
-	
-	@NotBlank
-	@Size(max=255)
-	@Column(name="idioma")
-	private String idioma;
-	
 
-	@Column(name="pretensaosalarial")
-	private double pretensaoSalarial;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private long id;
+
 	@NotBlank
-	@Size(max=50)
+	@Size(max = 11)
+	@Column(name = "cpf")
+	private String cpf;
+
+	@NotBlank
+	@Size(max = 50)
+	@Column(name = "senha")
+	private String senha;
+
+	@NotBlank
+	@Size(max = 50)
+	@Column(name = "tipo_permissao")
+	private USER_PERMISSIONS tipoPermissao;
+
+	@NotBlank
+	@Size(max = 60)
+	@Column(name = "nome")
+	private String nome;
+
+	@NotBlank
+	@Size(max = 20)
+	@Column(name = "nome_social")
+	private String nomeSocial;
+
+	@Column(name = "data_nasc")
+	private Date dataNasc;
+
+	@NotBlank
+	@Size(max = 15)
+	@Column(name = "estado_civil")
+	private String estadoCivil;
+
+	@NotBlank
+	@Size(max = 50)
+	@Column(name = "linkedin")
+	private String linkedin;
+
+	@NotBlank
+	@Size(max = 50)
+	@Column(name = "github")
+	private String gitHub;
+
+	@NotBlank
+	@Size(max = 50)
+	@Column(name = "portfolio")
+	private String portfolio;
+
+	@NotBlank
+	@Size(max = 10)
+	@Column(name = "raca")
+	private String raca;
+
+	@NotBlank
+	@Size(max = 20)
+	@Column(name = "genero")
+	private String genero;
+
+	@NotBlank
+	@Size(max = 9)
+	@Column(name = "sexobio")
+	private String sexoBio;
+
+	@NotBlank
+	@Size(max = 255)
+	@Column(name = "sobre")
+	private String sobre;
+
+	@NotBlank
+	@Size(max = 255)
+	@Column(name = "idioma")
+	private String idioma;
+
+	@Column(name = "pretensaosalarial")
+	private double pretensaoSalarial;
+
+	@NotBlank
+	@Size(max = 50)
 	@Email
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	
-	@Column(name="datacadastro")
-    private Date dataCadastro;
+
+	@Column(name = "datacadastro")
+	private Date dataCadastro;
 
 }
