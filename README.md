@@ -28,6 +28,6 @@ Lombok
 <h2>Grupo Jupyterianas</h2>
 
 Nadia Souza - https://github.com/nadiabsouza<br />
-Edilane Lima - https://github.com/edlanelima<br />
+Edlane Lima - https://github.com/edlanelima<br />
 Letícia Purim - https://github.com/Leticia-Purim<br />
 Marisa Marzanasco - https://github.com/mmarzanweb
