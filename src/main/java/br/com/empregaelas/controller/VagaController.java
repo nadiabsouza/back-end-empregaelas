@@ -18,45 +18,45 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empregaelas.domain.vo.v1.CandidatoVO;
-import br.com.empregaelas.service.CandidatoService;
+import br.com.empregaelas.domain.entity.Vaga;
+import br.com.empregaelas.service.VagaService;
 
 @RestController
-@RequestMapping("/candidato")
-public class CandidatoController {
+@RequestMapping("/vaga")
+public class VagaController {
 
 	@Autowired
-	CandidatoService service;
+	VagaService service;
 
-	// buscar todos
+	// buscar todas vagas
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
-	public List<CandidatoVO> findAll() {
+	public List<Vaga> findAll() {
 		return service.findAll();
 	}
 
 	// buscar por Id
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
-	public CandidatoVO findById(@PathVariable("id") Long id) {
+	public Vaga findById(@PathVariable("id") Long id) {
 		return service.findById(id);
 	}
 
-	// criar candidato
+	// criar vaga
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public CandidatoVO create(@Valid @RequestBody CandidatoVO candidato) {
-		return service.create(candidato);
+	public Vaga create(@Valid @RequestBody Vaga vaga) {
+		return service.create(vaga);
 	}
 
-	// atualizar candidato
+	// atualizar vaga
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
-	public CandidatoVO update(@Valid @RequestBody CandidatoVO candidato) {
-		return service.update(candidato);
+	public Vaga update(@Valid @RequestBody Vaga vaga) {
+		return service.update(vaga);
 	}
 
-	// deletar candidato
+	// deletar vaga
 	@DeleteMapping(value = "/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
 	public void delete(@PathVariable("id") Long id) {

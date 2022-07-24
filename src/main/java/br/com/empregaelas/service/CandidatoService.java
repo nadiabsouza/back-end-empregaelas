@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -27,18 +28,18 @@ public class CandidatoService {
 	@Autowired
 	CandidatoRepository repository;
 	
-	public CandidatoVO inserir( CandidatoVO candidato) {
+	public CandidatoVO create( CandidatoVO candidato) {
 		var entity = DozerConverter.parseObject(candidato,CandidatoVO.class);
 		var vo = DozerConverter.parseObject(entity, CandidatoVO.class);
 //		repository.save(candidato);
 		return vo;
 	}
 	
-	public List<CandidatoVO>buscarTodos(){
+	public List<CandidatoVO>findAll(){
 		return DozerConverter.parseListObject(repository.findAll(),CandidatoVO.class);
 	}
 	
-	public CandidatoVO buscarPorId(Long id) {
+	public CandidatoVO findById(Long id) {
 		var entity = repository.findById(id)
 		.orElseThrow(() -> 
 		new ResourceNotFoundException("Não foi encontrado registro em esse Id"));
@@ -52,11 +53,9 @@ public class CandidatoService {
 		repository.delete(entity);
 	}
 	
-	 public CandidatoVO atualizar(CandidatoVO candidato) {
+	 public CandidatoVO update(CandidatoVO candidato) {
 		var entity = repository.findById(candidato.getId())
 				.orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado registro com esse Id"));
-		
-		
 		
 		entity.setNome(candidato.getNome()); 
 		entity.setCpf(candidato.getCpf());
@@ -73,15 +72,8 @@ public class CandidatoService {
 		entity.setIdioma(candidato.getIdioma());
 		entity.setPretensaoSalarial(candidato.getPretensaoSalarial());
 		entity.setDataCadastro(candidato.getDataCadastro());
-	
 		
 		var vo = DozerConverter.parseObject(repository.save(entity), CandidatoVO.class);
 		return vo;
-	}
-	
-	
+	}	
 }
-
-
-
-

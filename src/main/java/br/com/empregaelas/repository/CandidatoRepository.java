@@ -7,11 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import br.com.empregaelas.domain.entity.Candidato;
 
-
-
 @Repository
 public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
 
 	List<Candidato> findByNome(String nome);
+
+	Candidato findByEmail(String email);
+	
+	Candidato findByCpf(String cpf);
 
 }
