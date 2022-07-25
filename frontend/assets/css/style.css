@@ -74,6 +74,16 @@ a {
     text-decoration: none;
 }
 
+*::placeholder {
+    color: rgba(84, 84, 84, 0.75);
+    font-size: 0.75em;
+    font-style: italic;
+}
+
+.form-control {
+    border: none;
+}
+
 body {
     background: #fff;
     font-family: 'Roboto', sans-serif;
@@ -113,10 +123,18 @@ nav.menu-desktop ul li a {
     text-transform: uppercase;
     border-radius: 3px;
     padding: 15px 30px 12px;
+    transition: .3s;
 }
 
 .botao-header-cadastro:hover {
-    
+    background: #AE9BBA;
+    color: #fff;    
+}
+
+section#hero {
+    background: url('../img/emprega_elas_home_hero.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    height: 750px;
 }
 
 main {
@@ -124,30 +142,43 @@ main {
     
 }
 
-.form-container-login {
+.form-container-acesso {
     display: flex;
     height: 100%;
 }
 
-.form-container-login form#login {
+.form-container-acesso form {
     width: 100%;
     max-width: 450px;
     background: #E8E3E3;
     padding: 30px;
     border-radius: 5px;
     height: fit-content;
+    border: none !important;
 }
 
-.form-container-login form#login input {
-    border: none;
+.form-container-acesso form label {
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1em;
+    margin-bottom: 10px;
 }
 
-.form-container-login form#login input:focus {
-    border: none;
+.form-container-acesso form input {
+    height: 40px;
+    border: none !important;
+}
+
+.form-container-acesso form input.senha:after {
+    content:'x';
+}
+
+.form-container-acesso form input:focus {
+    border: none !important;
     box-shadow: 0 0 0 3px #a3698650;
 }
 
-.form-container-login form#login input[type='submit'] {
+.form-container-acesso form input[type='submit'] {
     background: #A36986;
     color: #fff;
     font-family: 'Rajdhani', sans-serif;
@@ -156,10 +187,17 @@ main {
     text-transform: uppercase;
     padding: 3px 30px 0;
     height: 40px;
+    width: 100%;
+    border: none !important;
     border-radius: 3px;
     transition: .3s;
 }
 
-.form-container-login form#login input[type='submit']:hover {
+.form-container-acesso form input[type='submit']:hover {
     background: #AE9BBA;
+}
+
+.form-container-acesso form input[type='submit']:focus {
+    border: none !important;
+    box-shadow: 0 0 0 3px #a3698650;
 }
