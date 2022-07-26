@@ -1,12 +1,14 @@
 package br.com.empregaelas.controller;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,47 +22,73 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.empregaelas.domain.vo.v1.CandidatoVO;
 import br.com.empregaelas.service.CandidatoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Candidato Endpoint")
 @RestController
-@RequestMapping("/candidato")
+@RequestMapping("/api/candidato/v1")
 public class CandidatoController {
 
+	
 	@Autowired
 	CandidatoService service;
 
 	// buscar todos
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
+	@Operation(summary="Listar todos os candidatos")
 	@ResponseStatus(value = HttpStatus.OK)
 	public List<CandidatoVO> findAll() {
-		return service.findAll();
+	List<CandidatoVO> candidatosVO = service.findAll();
+	candidatosVO.stream().forEach(p -> p.add(linkTo(methodOn(CandidatoController.class).findById(p.getKey())).withSelfRel()));
+	return candidatosVO;
+	
 	}
 
 	// buscar por Id
-	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml" })
+	@Operation(summary="Procurar candidato por ID")
 	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO findById(@PathVariable("id") Long id) {
-		return service.findById(id);
+		CandidatoVO candidatoVO = service.findById(id);
+		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(id)).withSelfRel());
+		return candidatoVO;
 	}
 
 	// criar candidato
-	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	
+	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
+	"application/xml" })
+	@Operation(summary="Cadastrar candidato")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public CandidatoVO create(@Valid @RequestBody CandidatoVO candidato) {
-		return service.create(candidato);
+		CandidatoVO candidatoVO = service.create(candidato);
+		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(candidatoVO.getKey())).withSelfRel());
+		return candidatoVO;
 	}
+	
 
 	// atualizar candidato
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping (consumes = { "application/json", "application/xml" }, produces = { "application/json",
+	"application/xml" })
+	@Operation(summary="Atualizar candidato")
 	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO update(@Valid @RequestBody CandidatoVO candidato) {
-		return service.update(candidato);
+		CandidatoVO candidatoVO = service.update(candidato);
+		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(candidatoVO.getKey())).withSelfRel());
+		return candidatoVO;
+		
+		
 	}
 
 	// deletar candidato
 	@DeleteMapping(value = "/{id}")
+	@Operation(summary="Deletar candidato")
 	@ResponseStatus(value = HttpStatus.OK)
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);
 	}
 
 }
+
+
