@@ -28,7 +28,7 @@ public class Candidato implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private long id;
+	private Long id;
 
 	@NotBlank
 	@Size(max = 11)
@@ -50,7 +50,7 @@ public class Candidato implements Serializable {
 	@Column(name = "nome")
 	private String nome;
 
-	@NotBlank
+	
 	@Size(max = 20)
 	@Column(name = "nome_social")
 	private String nomeSocial;
@@ -58,22 +58,22 @@ public class Candidato implements Serializable {
 	@Column(name = "data_nasc")
 	private Date dataNasc;
 
-	@NotBlank
+	
 	@Size(max = 15)
 	@Column(name = "estado_civil")
 	private String estadoCivil;
 
-	@NotBlank
+	
 	@Size(max = 50)
 	@Column(name = "linkedin")
 	private String linkedin;
 
-	@NotBlank
+	
 	@Size(max = 50)
 	@Column(name = "github")
 	private String gitHub;
 
-	@NotBlank
+	
 	@Size(max = 50)
 	@Column(name = "portfolio")
 	private String portfolio;
@@ -93,12 +93,12 @@ public class Candidato implements Serializable {
 	@Column(name = "sexobio")
 	private String sexoBio;
 
-	@NotBlank
+	
 	@Size(max = 255)
 	@Column(name = "sobre")
 	private String sobre;
 
-	@NotBlank
+	
 	@Size(max = 255)
 	@Column(name = "idioma")
 	private String idioma;
@@ -114,5 +114,19 @@ public class Candidato implements Serializable {
 
 	@Column(name = "datacadastro")
 	private Date dataCadastro;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
+	
+	
+	
 }
+

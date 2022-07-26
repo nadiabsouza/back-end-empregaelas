@@ -22,7 +22,7 @@ import br.com.empregaelas.domain.entity.Vaga;
 import br.com.empregaelas.service.VagaService;
 
 @RestController
-@RequestMapping("/vaga")
+@RequestMapping("/api/vaga/v1")
 public class VagaController {
 
 	@Autowired
@@ -64,3 +64,6 @@ public class VagaController {
 	}
 
 }
+
+
+//mudar vaga e criar VagaVO

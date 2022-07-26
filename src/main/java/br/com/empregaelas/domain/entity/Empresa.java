@@ -12,6 +12,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.springframework.hateoas.Link;
+
 import br.com.empregaelas.enums.USER_PERMISSIONS;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -64,7 +66,6 @@ public class Empresa implements Serializable{
 		private String nomeFantasia;
 		
 		
-		@NotBlank
 		@Size(max=11)
 		@Column(name="telefone")
 		private String telefone;
@@ -79,13 +80,18 @@ public class Empresa implements Serializable{
 		@Column(name="segmento")
 		private String segmento;
 		
-//		
-//		@Size(max=50)
-//		@Column(name="numfunc")
-//		private int numFunc;
-//		
+		
+		@Column(name="numFunc")
+		private int numFunc;
+
+
+		
+		}
+		
+		
+
   
-	}
+	
 
 
 

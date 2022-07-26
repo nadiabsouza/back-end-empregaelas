@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.empregaelas.adapter.DozerConverter;
 import br.com.empregaelas.domain.entity.Vaga;
-import br.com.empregaelas.exception.ResourceNotFoundException;
+import br.com.empregaelas.exceptions.ResourceNotFoundException;
 import br.com.empregaelas.repository.VagaRepository;
 
 @Service

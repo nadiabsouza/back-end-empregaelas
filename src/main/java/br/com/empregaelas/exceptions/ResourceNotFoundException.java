@@ -1,4 +1,4 @@
-package br.com.empregaelas.exception;
+package br.com.empregaelas.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -15,3 +15,6 @@ public class ResourceNotFoundException extends RuntimeException {
 	}
 
 }
+
+
+// OK

@@ -16,9 +16,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-	@Table(name="ee_vaga")
-	@Data
-	@NoArgsConstructor
+@Table(name = "ee_vaga")
+@Data
+@NoArgsConstructor
 	public class Vaga implements Serializable{
 		
 
@@ -34,6 +34,7 @@ import lombok.NoArgsConstructor;
 		@Size(max=1)
 		@Column(name="publicada")
 		private int publicada;
+		
 		
 		@Size(max=8)
 		@Column(name="datapublicacao")
@@ -56,7 +57,7 @@ import lombok.NoArgsConstructor;
 		@Column(name="jornada")
 		private String jornada;
 		
-		@NotBlank
+		
 		@Size(max=30)
 		@Column(name="salario")
 		private double salario;
@@ -71,7 +72,7 @@ import lombok.NoArgsConstructor;
 		@Column(name="modalidade")
 		private String modalidade;
 		
-		@NotBlank
+		
 		@Size(max=255)
 		@Column(name="descrvaga")
 		private String descrVaga;

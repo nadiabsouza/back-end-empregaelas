@@ -2,16 +2,24 @@ package br.com.empregaelas.domain.vo.v1;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
-import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
-@Data
-public class CandidatoVO implements Serializable{
+import com.github.dozermapper.core.Mapping;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+	public class CandidatoVO extends RepresentationModel<CandidatoVO> implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	
-	private long id;
+	@Mapping("id")
+	private long Key;
 	private String cpf;
 	private String nome;
 	private String nomeSocial;
@@ -27,7 +35,39 @@ public class CandidatoVO implements Serializable{
 	private String idioma;
 	private double pretensaoSalarial;
     private Date dataCadastro;
+    
+    
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(Key, cpf, dataCadastro, dataNasc, estadoCivil, genero, gitHub, idioma,
+				linkedin, nome, nomeSocial, portfolio, pretensaoSalarial, raca, sexoBio, sobre);
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CandidatoVO other = (CandidatoVO) obj;
+		return Key == other.Key && Objects.equals(cpf, other.cpf) && Objects.equals(dataCadastro, other.dataCadastro)
+				&& Objects.equals(dataNasc, other.dataNasc) && Objects.equals(estadoCivil, other.estadoCivil)
+				&& Objects.equals(genero, other.genero) && Objects.equals(gitHub, other.gitHub)
+				&& Objects.equals(idioma, other.idioma) && Objects.equals(linkedin, other.linkedin)
+				&& Objects.equals(nome, other.nome) && Objects.equals(nomeSocial, other.nomeSocial)
+				&& Objects.equals(portfolio, other.portfolio)
+				&& Double.doubleToLongBits(pretensaoSalarial) == Double.doubleToLongBits(other.pretensaoSalarial)
+				&& Objects.equals(raca, other.raca) && Objects.equals(sexoBio, other.sexoBio)
+				&& Objects.equals(sobre, other.sobre);
+	}
+    
+    
+    
 
 }
 
-
+// nadia 

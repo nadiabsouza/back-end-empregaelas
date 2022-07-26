@@ -9,7 +9,8 @@ public class CredenciaisContaVO implements Serializable {
 
 	private String cpfOuCnpj;
 	private String senha;
-
+//mudar pra e-mail 
+	
 	public CredenciaisContaVO() {
 
 	}
@@ -54,4 +55,4 @@ public class CredenciaisContaVO implements Serializable {
 
 }
 
-// entender melhor essa classe
+

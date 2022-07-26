@@ -1,4 +1,4 @@
-package br.com.empregaelas.exception;
+package br.com.empregaelas.exceptions;
 
 import org.springframework.security.core.AuthenticationException;
 
@@ -13,3 +13,4 @@ public class InvalidJwtAuthenticationException extends AuthenticationException {
 
 }
 
+// OK

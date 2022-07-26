@@ -14,8 +14,8 @@ package br.com.empregaelas.service;
 	import org.springframework.web.multipart.MultipartFile;
 
 	import br.com.empregaelas.config.FileStorageConfig;
-	import br.com.empregaelas.exception.FileStorageException;
-	import br.com.empregaelas.exception.MyFileNotFoundException;
+import br.com.empregaelas.exceptions.FileStorageException;
+import br.com.empregaelas.exceptions.MyFileNotFoundException;
 
 	@Service
 	public class FileStorageService {
@@ -24,8 +24,7 @@ package br.com.empregaelas.service;
 		
 		@Autowired
 		public FileStorageService(FileStorageConfig fileStorageConfig) {
-			/*	metodo faz a limpeza do nome, não permitiendo caracteres fora do contexto
-			permitindo apenas caminhos validos sem a possibilidade de ataque de Path manipulation*/
+			
 
 			this.fileStorageLocation = Paths.get(fileStorageConfig.getUploadDir())
 					.toAbsolutePath().normalize();
@@ -35,7 +34,7 @@ package br.com.empregaelas.service;
 				throw new FileStorageException("Could not create the directory where the uploaded files will be stored", e);
 			}
 		}
-			// metodo passado pelo cabeçalho de qual tipo de arquivo aceito para uploads
+			
 		public String storeFile(MultipartFile file) {
 			String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 			

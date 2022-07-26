@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Authentication Endpoint")
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
 
 	@Autowired
@@ -32,3 +32,6 @@ public class AuthController {
 		return userService.login(cred.getCpfOuCnpj(), cred.getSenha());
 	}
 }
+
+
+// UM POUCO DIFERENTE PJ

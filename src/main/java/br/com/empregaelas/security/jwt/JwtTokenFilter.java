@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -18,13 +17,11 @@ import org.springframework.web.filter.GenericFilterBean;
 
 import br.com.empregaelas.service.UserService;
 
-//vamos extender de um filtro generico e pegar o metodo de implementação
 public class JwtTokenFilter extends GenericFilterBean {
 
-	// injetamos a classe provider
 	@Autowired
 	private JwtProvider jwtProvider;
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -33,9 +30,6 @@ public class JwtTokenFilter extends GenericFilterBean {
 		this.jwtProvider = jwtProvider;
 	}
 
-	// o filtro serve para filtrar se há um token devolvido pelo cabeçalho
-	// trabalhado no nosso resolverToken
-
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -43,19 +37,17 @@ public class JwtTokenFilter extends GenericFilterBean {
 
 		if (token != null && jwtProvider.validateToken(token)) {
 			UserDetails userDetails = userService.loadUserByEmail(jwtProvider.getEmail(token));
-			UsernamePasswordAuthenticationToken auth = 
-					new UsernamePasswordAuthenticationToken(
-							userDetails, 
-							"",
-							userDetails.getAuthorities());
-//			Authentication auth = jwtProvider.getAuthentication(upat);
+			UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, "",
+					userDetails.getAuthorities());
+
 			if (auth != null) {
 				auth.setDetails(new WebAuthenticationDetailsSource().buildDetails((HttpServletRequest) request));
 				SecurityContextHolder.getContext().setAuthentication(auth);
 			}
 		}
 		chain.doFilter(request, response);
-
 	}
 
 }
+
+// OK POUCA COISA DIFERENÇA

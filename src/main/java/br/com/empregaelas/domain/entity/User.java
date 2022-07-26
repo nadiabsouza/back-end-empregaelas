@@ -20,7 +20,9 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "users")
 public class User implements UserDetails, Serializable {
@@ -34,9 +36,6 @@ public class User implements UserDetails, Serializable {
 
 	@Column(name = "user_name", unique = true) // não permite repetição do valor do objeto
 	private String userName;
-
-	@Column(name = "full_name")
-	private String fullName;
 
 	@Column(name = "password")
 	private String password;
@@ -52,6 +51,7 @@ public class User implements UserDetails, Serializable {
 
 	@Column(name = "enabled")
 	private Boolean enabled;
+	
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -69,7 +69,6 @@ public class User implements UserDetails, Serializable {
 			Boolean accountNonLocked, Boolean credentialNonExpired, Boolean enabled, List<Permission> permissions) {
 		this.id = id;
 		this.userName = userName;
-		this.fullName = fullName;
 		this.password = password;
 		this.accountNonExpired = accountNonExpired;
 		this.accountNonLocked = accountNonLocked;
@@ -115,6 +114,7 @@ public class User implements UserDetails, Serializable {
 	, inverseJoinColumns = {	@JoinColumn(name = "id_permission") })
 	private List<Permission> permissions;
 
+	
 	public List<String> getRoles() {
 		List<String> roles = new ArrayList<>();
 		for (Permission permission : this.permissions) {
@@ -125,7 +125,7 @@ public class User implements UserDetails, Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(accountNonExpired, accountNonLocked, credentialNonExpired, enabled, fullName, id, password,
+		return Objects.hash(accountNonExpired, accountNonLocked, credentialNonExpired, enabled, id, password,
 				permissions, userName);
 	}
 
@@ -141,7 +141,7 @@ public class User implements UserDetails, Serializable {
 		return Objects.equals(accountNonExpired, other.accountNonExpired)
 				&& Objects.equals(accountNonLocked, other.accountNonLocked)
 				&& Objects.equals(credentialNonExpired, other.credentialNonExpired)
-				&& Objects.equals(enabled, other.enabled) && Objects.equals(fullName, other.fullName)
+				&& Objects.equals(enabled, other.enabled) 
 				&& Objects.equals(id, other.id) && Objects.equals(password, other.password)
 				&& Objects.equals(permissions, other.permissions) && Objects.equals(userName, other.userName);
 	}
@@ -168,18 +168,6 @@ public class User implements UserDetails, Serializable {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-
-
-
-	public String getFullName() {
-		return fullName;
-	}
-
-
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
 	}
 
 

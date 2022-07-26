@@ -2,20 +2,13 @@ package br.com.empregaelas.security.jwt;
 
 import java.util.Base64;
 import java.util.Date;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import br.com.empregaelas.exception.InvalidJwtAuthenticationException;
+import br.com.empregaelas.exceptions.InvalidJwtAuthenticationException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtException;
@@ -31,17 +24,10 @@ public class JwtProvider {
 	@Value("${security.jwt.token.expire-length:3600000}")
 	private long validade = 3600000;
 
-
 	@PostConstruct
 	protected void init() {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
-	/*
-	 * será feita a captura do username que será carregado assim que houver a
-	 * validaçao de usuario e senha do banco
-	 * 
-	 * criar o token com o tipo de algoritmo passado para criação
-	 */
 
 	public String createToken(String email, String role) {
 		Claims claims = Jwts.claims().setSubject(email);
@@ -54,23 +40,9 @@ public class JwtProvider {
 				.signWith(SignatureAlgorithm.HS256, secretKey).compact();
 	}
 
-	// faz o cara crachá
-//	public Authentication getAuthentication(String token) {
-//		UserDetails userDetails = this.userDetailsService.loadUserByUsername(getEmail(token));
-//		return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
-//	}
-
-	// comportamento igual ao do modelo da pagina jwt
-
 	public String getEmail(String token) {
 		return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
 	}
-
-	/*
-	 * vai criar retornar a string de autorização via cabeçalho. O detalhe que ele é
-	 * devolvido em texto com a palavra Bearer entao precisamos remover esse texto
-	 * atraves de uma substring
-	 */
 
 	public String resolveToken(HttpServletRequest req) {
 		String bearerToken = req.getHeader("Authorization");
@@ -80,8 +52,6 @@ public class JwtProvider {
 		return null;
 	}
 
-	// vamos criar a validação do nosso token pra saber de expirou ou nao
-
 	public boolean validateToken(String token) {
 		try {
 			Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
@@ -90,7 +60,9 @@ public class JwtProvider {
 			}
 			return true;
 		} catch (JwtException | IllegalArgumentException e) {
-			throw new InvalidJwtAuthenticationException("Token expirado ou inválido");
+			return false;
 		}
 	}
 }
+
+// OK UM POUCO DIFERENTE

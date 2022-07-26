@@ -9,5 +9,5 @@ import br.com.empregaelas.domain.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	// @Query("SELECT u FROM User u WHERE u.userName =:userName")
-	User findByUserName(String userName);
+	User findByUserName(String userName); // busca o nome de um usuário
 }

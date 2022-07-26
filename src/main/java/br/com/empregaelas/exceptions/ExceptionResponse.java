@@ -1,4 +1,4 @@
-package br.com.empregaelas.exception;
+package br.com.empregaelas.exceptions;
 	
 
 	import java.io.Serializable;
@@ -63,4 +63,4 @@ package br.com.empregaelas.exception;
 		
 	}
 
-
+//OK CODIGO NAO TAVA COMPLETO DO PJ
