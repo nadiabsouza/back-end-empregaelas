@@ -30,24 +30,24 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/api/candidato/v1")
 public class CandidatoController {
 
-	
 	@Autowired
 	CandidatoService service;
 
 	// buscar todos
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
-	@Operation(summary="Listar todos os candidatos")
+	@Operation(summary = "Listar todos os candidatos")
 	@ResponseStatus(value = HttpStatus.OK)
 	public List<CandidatoVO> findAll() {
-	List<CandidatoVO> candidatosVO = service.findAll();
-	candidatosVO.stream().forEach(p -> p.add(linkTo(methodOn(CandidatoController.class).findById(p.getKey())).withSelfRel()));
-	return candidatosVO;
-	
+		List<CandidatoVO> candidatosVO = service.findAll();
+		candidatosVO.stream()
+				.forEach(p -> p.add(linkTo(methodOn(CandidatoController.class).findById(p.getKey())).withSelfRel()));
+		return candidatosVO;
+
 	}
 
 	// buscar por Id
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml" })
-	@Operation(summary="Procurar candidato por ID")
+	@Operation(summary = "Procurar candidato por ID")
 	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO findById(@PathVariable("id") Long id) {
 		CandidatoVO candidatoVO = service.findById(id);
@@ -56,40 +56,35 @@ public class CandidatoController {
 	}
 
 	// criar candidato
-	
+
 	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
-	"application/xml" })
-	@Operation(summary="Cadastrar candidato")
+			"application/xml" })
+	@Operation(summary = "Cadastrar candidato")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public CandidatoVO create(@Valid @RequestBody CandidatoVO candidato) {
 		CandidatoVO candidatoVO = service.create(candidato);
 		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(candidatoVO.getKey())).withSelfRel());
 		return candidatoVO;
 	}
-	
 
 	// atualizar candidato
-	@PutMapping (consumes = { "application/json", "application/xml" }, produces = { "application/json",
-	"application/xml" })
-	@Operation(summary="Atualizar candidato")
+	@PutMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
+			"application/xml" })
+	@Operation(summary = "Atualizar candidato")
 	@ResponseStatus(value = HttpStatus.OK)
 	public CandidatoVO update(@Valid @RequestBody CandidatoVO candidato) {
 		CandidatoVO candidatoVO = service.update(candidato);
 		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(candidatoVO.getKey())).withSelfRel());
 		return candidatoVO;
-		
-		
+
 	}
 
 	// deletar candidato
 	@DeleteMapping(value = "/{id}")
-	@Operation(summary="Deletar candidato")
+	@Operation(summary = "Deletar candidato")
 	@ResponseStatus(value = HttpStatus.OK)
 	public void delete(@PathVariable("id") Long id) {
 		service.delete(id);
 	}
 
 }
-
-
-//criado Nadia
