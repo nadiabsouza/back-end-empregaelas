@@ -12,9 +12,6 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import lombok.Data;
-
-@Data
 @Entity
 @Table(name = "permissions")
 public class Permission implements GrantedAuthority, Serializable {
@@ -78,5 +75,3 @@ public class Permission implements GrantedAuthority, Serializable {
 
 }
 
-
-// nao temos essa classe no bd! ver de excluir
