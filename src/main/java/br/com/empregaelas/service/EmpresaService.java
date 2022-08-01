@@ -51,7 +51,7 @@ public class EmpresaService {
 		entity.setTelefone(empresa.getTelefone());
 		entity.setResponsavel(empresa.getResponsavel());
 		entity.setSegmento(empresa.getSegmento());
-		// entity.setNumFunc(empresa.getNumFunc());
+		entity.setNumFunc(empresa.getNumFunc());
 
 		var vo = DozerConverter.parseObject(repository.save(entity), EmpresaVO.class);
 		return vo;

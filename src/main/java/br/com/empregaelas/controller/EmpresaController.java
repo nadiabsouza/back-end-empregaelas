@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,9 +33,8 @@ public class EmpresaController {
 
 	@Autowired
 	EmpresaService service;
-	
 
-	
+	@PreAuthorize("hasAnyAuthority('empresa')")
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
 	@Operation(summary = "Listar todos as empresas")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -46,7 +46,6 @@ public class EmpresaController {
 		return empresasVO;
 	}
 
-	
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml" })
 	@Operation(summary = "Procurar empresa por ID")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -55,8 +54,6 @@ public class EmpresaController {
 		empresaVO.add(linkTo(methodOn(EmpresaController.class).findById(id)).withSelfRel());
 		return empresaVO;
 	}
-
-
 
 	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
@@ -68,7 +65,6 @@ public class EmpresaController {
 		return empresaVO;
 	}
 
-	
 	@PutMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
 	@Operation(summary = "Atualizar empresa")
@@ -80,7 +76,6 @@ public class EmpresaController {
 
 	}
 
-   
 	@DeleteMapping(value = "/{id}")
 	@Operation(summary = "Deletar empresa")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -89,4 +84,3 @@ public class EmpresaController {
 	}
 
 }
-

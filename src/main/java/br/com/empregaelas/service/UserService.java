@@ -54,33 +54,28 @@ public class UserService {
 		throw new UsernameNotFoundException("O usuario " + email + " não localizado");
 	}
 
-	public ResponseEntity login(String cpfOuCnpj, String senha) throws UsernameNotFoundException {
+	public ResponseEntity<Map<Object, Object>> login(String email, String senha) throws UsernameNotFoundException {
 		Map<Object, Object> model = new HashMap<>();
-
-		if (cpfOuCnpj.length() == 11) {
-			Candidato candidato = candidatoRepository.findByCpf(cpfOuCnpj);
-			if (candidato != null) {
-				if (candidato.getSenha().equals(senha)) {
-					String token = tokenProvider.createToken(candidato.getEmail(),
-							candidato.getTipoPermissao().toString());
-					model.put("cpf", cpfOuCnpj);
-					model.put("token", token);
-					return ok(model);
-				}
+		Candidato candidato = candidatoRepository.findByEmail(email);
+		if (candidato != null) {
+			if (candidato.getSenha().equals(senha)) {
+				String token = tokenProvider.createToken(candidato.getEmail(), candidato.getTipoPermissao().toString());
+				model.put("token", token);
+				model.put("usuario", candidato);
+				return ok(model);
 			}
 		} else {
-			Empresa empresa = empresaRepository.findByCnpj(cpfOuCnpj);
+			Empresa empresa = empresaRepository.findByEmail(email);
 			if (empresa != null) {
 				if (empresa.getSenha().equals(senha)) {
-					String token = tokenProvider.createToken(empresa.getEmail(),
-							empresa.getTipoPermissao().toString());
-					model.put("cnpj", cpfOuCnpj);
+					String token = tokenProvider.createToken(empresa.getEmail(), empresa.getTipoPermissao().toString());
 					model.put("token", token);
+					model.put("usuario", empresa);
 					return ok(model);
 				}
 			}
 		}
-		throw new UsernameNotFoundException("Usuário " + cpfOuCnpj+ " não localizado");
+		throw new UsernameNotFoundException("Usuário com e-mail " + email + " não localizado");
 	}
 
 }

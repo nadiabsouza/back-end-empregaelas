@@ -18,4 +18,3 @@ public class MyFileNotFoundException extends RuntimeException {
 
 }
 
-//OK

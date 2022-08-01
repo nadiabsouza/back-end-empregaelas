@@ -1,4 +1,4 @@
-package br.com.empregaelas.exceptions;
+package br.com.empregaelas.exceptions.handler;
 
 import java.time.OffsetDateTime;
 import org.springframework.http.HttpStatus;
@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
+
+import br.com.empregaelas.exceptions.ExceptionResponse;
+import br.com.empregaelas.exceptions.InvalidJwtAuthenticationException;
+import br.com.empregaelas.exceptions.ResourceNotFoundException;
 
 @ControllerAdvice
 @RestController
@@ -34,7 +38,3 @@ public class ManipuladorGlobalDeExceptions {
 		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
 }
-
-// UM POUCO DIFERENTE PJ 
-
-

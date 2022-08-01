@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "ee_endereco")
 
+
 public class Endereco implements Serializable {
 
 	private static final long serialVersionUID = 1L;

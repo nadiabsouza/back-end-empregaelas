@@ -88,7 +88,7 @@ import lombok.NoArgsConstructor;
 		
 		
 		@Size(max=30)
-		@Column(name="benificios")
+		@Column(name="beneficios")
 	    private String beneficios;
 		
 		
@@ -110,6 +110,8 @@ import lombok.NoArgsConstructor;
 		@Size(max=10)
 		@Column(name="cep")
 	    private char cep;
+
+
 		
 		
 		

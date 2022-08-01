@@ -15,25 +15,22 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Serializable {
-	
 
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	@Mapping("id")
 	private long Key;
 	private String cnpj;
 	private String senha;
 	private USER_PERMISSIONS tipoPermissao;
-	private Date email;
+	private String email;
 	private String razaosocial;
 	private String nomefantasia;
 	private String telefone;
 	private String responsavel;
 	private String segmento;
-	private String numFunc;
-	
-	
+	private Integer numFunc;
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,8 +39,7 @@ public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Seriali
 				segmento, senha, telefone, tipoPermissao);
 		return result;
 	}
-	
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,15 +50,10 @@ public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Seriali
 			return false;
 		EmpresaVO other = (EmpresaVO) obj;
 		return Key == other.Key && Objects.equals(cnpj, other.cnpj) && Objects.equals(email, other.email)
-				&& Objects.equals(nomefantasia, other.nomefantasia) && Objects.equals(numFunc, other.numFunc)
+				&& Objects.equals(nomefantasia, other.nomefantasia) && numFunc == other.numFunc
 				&& Objects.equals(razaosocial, other.razaosocial) && Objects.equals(responsavel, other.responsavel)
 				&& Objects.equals(segmento, other.segmento) && Objects.equals(senha, other.senha)
 				&& Objects.equals(telefone, other.telefone) && tipoPermissao == other.tipoPermissao;
 	}
-	
-    
-  
+
 }
-
-
-

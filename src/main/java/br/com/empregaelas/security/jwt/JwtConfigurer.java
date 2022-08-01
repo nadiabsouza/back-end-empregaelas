@@ -28,4 +28,4 @@ public class JwtConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilt
 	}
 }
 
-// OK UM POUCO DIFERENTE
+// ##

@@ -18,4 +18,3 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
 
 }
 
-// listar empresa por razao social (mudar)
