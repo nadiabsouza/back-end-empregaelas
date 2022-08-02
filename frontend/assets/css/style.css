@@ -80,6 +80,7 @@ img {
 
 a {
     text-decoration: none;
+    transition: .3s;
 }
 
 *::placeholder {
@@ -100,6 +101,23 @@ span.chaves {
 header {
     background: #A36986;
     padding: 0 15px;
+}
+
+a.botao_1 {
+    padding: 13px 30px 10px;
+    margin-top: 15px;
+    background: #A36986;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+a.botao_1:hover {
+    background: #AE9BBA;
 }
 
 nav.menu-desktop ul li{
