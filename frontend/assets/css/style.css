@@ -1,5 +1,13 @@
 /*CSS Projeto Integrador - Emprega Elas*/
 
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    color: #555;
+}
+
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0 0 15px !important;
     padding: 0;
@@ -10,13 +18,13 @@ h1.margin-0 h2.margin-0, h3.margin-0, h4.margin-0, h5.margin-0, h6.margin-0 {
 }
 
 h1, h2, h3  {
-	line-height: 1.3em;
+	line-height: 1.2em;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
 }
 
 h4, h5, h6 {
-    line-height: 1.5em;
+    line-height: 1.3em;
 }
 
 h1, h2, h3, h4, h5, h6  {
@@ -24,8 +32,12 @@ h1, h2, h3, h4, h5, h6  {
     font-weight: 600;
 }
 
+h1.cap, h2.cap, h3.cap, h4.cap, h5.cap, h6.cap {
+    text-transform: capitalize;
+}
+
 h1 {
-    font-size: 3em;
+    font-size: 3em;    
 }
 
 h2 {
@@ -42,10 +54,6 @@ h5 {
 
 h6 {
     font-size: 1.5em;
-}
-
-h1 {
-    font-size: 1.3em;
 }
 
 p {
@@ -72,6 +80,7 @@ img {
 
 a {
     text-decoration: none;
+    transition: .3s;
 }
 
 *::placeholder {
@@ -80,16 +89,13 @@ a {
     font-style: italic;
 }
 
-.form-control {
-    border: none;
+span.chaves {
+    position: relative;
+    top: -0.05em;
 }
 
-body {
-    background: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    color: #555;
+.form-control {
+    border: none;
 }
 
 header {
@@ -97,10 +103,21 @@ header {
     padding: 0 15px;
 }
 
-nav.menu-desktop {
+a.botao_1 {
+    padding: 13px 30px 10px;
+    margin-top: 15px;
+    background: #A36986;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: fit-content;
 }
 
-nav.menu-desktop ul {
+a.botao_1:hover {
+    background: #AE9BBA;
 }
 
 nav.menu-desktop ul li{
@@ -131,15 +148,85 @@ nav.menu-desktop ul li a {
     color: #fff;    
 }
 
-section#hero {
+section#home-hero {
     background: url('../img/emprega_elas_home_hero.jpg') no-repeat 50% 50%;
     background-size: cover;
-    height: 750px;
+    height: 800px;
+    position: relative;
+}
+
+div.overlay {
+    background: rgba(0,0,0, .5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+section#home-hero .hero-content {
+    width: 100%;
+    max-width: 700px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+section#home-hero .hero-content h1 {
+    color: #fff;
+}
+
+section#home-hero .hero-content h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+    color: #fff;
+}
+
+section#home-hero .hero-content form {
+    background: #fff;
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 30px;
+    max-width: 540px;
+}
+
+section#home-hero .hero-content input#busca {
+    padding-right: 15px;
+    box-shadow: none;
+}
+
+section#home-hero .hero-content input.submit {
+    background: #A36986;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: #fff;
+    width: 40%;
+    height: 40px;
+    padding: 3px 0 0;
+    transition: .3s;
+}
+
+section#home-hero .hero-content input.submit:hover {
+    background: #AE9BBA;
+
 }
 
 main {
-    height: 100vh;
-    
+    min-height: 100vh;    
+}
+
+section#home-sobre {
+    background: #E8E3E3;
+    padding: 80px 0;
 }
 
 .form-container-acesso {
