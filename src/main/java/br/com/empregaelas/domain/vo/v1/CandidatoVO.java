@@ -8,17 +8,17 @@ import org.springframework.hateoas.RepresentationModel;
 
 import com.github.dozermapper.core.Mapping;
 
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
-	public class CandidatoVO extends RepresentationModel<CandidatoVO> implements Serializable {
-	
+public class CandidatoVO extends RepresentationModel<CandidatoVO> implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
-	@Mapping("id")
+
+//	@Mapping("id")
 	private long Key;
 	private String cpf;
 	private String nome;
@@ -33,18 +33,21 @@ import lombok.Setter;
 	private String sexoBio;
 	private String sobre;
 	private String idioma;
+	private String email;
+	private String senha;
+	private USER_PERMISSIONS tipoPermissao;
 	private double pretensaoSalarial;
-    private Date dataCadastro;
-    
-    
+	private Date dataCadastro;
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + Objects.hash(Key, cpf, dataCadastro, dataNasc, estadoCivil, genero, gitHub, idioma,
-				linkedin, nome, nomeSocial, portfolio, pretensaoSalarial, raca, sexoBio, sobre);
+				linkedin, nome, nomeSocial, portfolio, pretensaoSalarial, raca, sexoBio, sobre, email, tipoPermissao, senha);
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -60,14 +63,14 @@ import lombok.Setter;
 				&& Objects.equals(idioma, other.idioma) && Objects.equals(linkedin, other.linkedin)
 				&& Objects.equals(nome, other.nome) && Objects.equals(nomeSocial, other.nomeSocial)
 				&& Objects.equals(portfolio, other.portfolio)
+				&& Objects.equals(email, other.email)
+				&& Objects.equals(senha, other.senha)
+				&& Objects.equals(tipoPermissao, other.tipoPermissao)
 				&& Double.doubleToLongBits(pretensaoSalarial) == Double.doubleToLongBits(other.pretensaoSalarial)
 				&& Objects.equals(raca, other.raca) && Objects.equals(sexoBio, other.sexoBio)
 				&& Objects.equals(sobre, other.sobre);
 	}
-    
-    
-    
 
 }
 
-// nadia 
+

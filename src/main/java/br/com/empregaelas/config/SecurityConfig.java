@@ -49,13 +49,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.authorizeRequests()
-				.antMatchers("/api/auth/signin", "/api-docs/**", "/swagger-ui.html").permitAll()
-				.antMatchers("/api/empresa/v1/**", "/api/candidato/v1/**").authenticated()
+				.antMatchers("/api/auth/**", "/api-docs/**", "/swagger-ui.html").permitAll()
+				.antMatchers("/api/**","/api/**/**","/api/**/**/**").authenticated()
 				.antMatchers("/api/users").denyAll()
 				.and()
 				.apply(new JwtConfigurer(jwtProvider, userService));
 	}
 
 }
+
 
 

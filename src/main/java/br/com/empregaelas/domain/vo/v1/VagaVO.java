@@ -19,7 +19,7 @@ public class VagaVO extends RepresentationModel<VagaVO> implements Serializable 
 
 	@Mapping("id")
 	private long Key;
-	private int publicada;
+	private Integer publicada;
 	private Date dataPublicacao;
 	private String cargo;
 	private String nivel;
@@ -32,7 +32,7 @@ public class VagaVO extends RepresentationModel<VagaVO> implements Serializable 
 	private String uf;
 	private String cidade;
 	private String bairro;
-	private char cep;
+	private String cep;
 
 	@Override
 	public int hashCode() {
@@ -62,6 +62,4 @@ public class VagaVO extends RepresentationModel<VagaVO> implements Serializable 
 	}
 
 }
-		
-		
-//nadia
+

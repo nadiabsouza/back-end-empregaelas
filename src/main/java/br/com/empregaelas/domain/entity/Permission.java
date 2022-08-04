@@ -12,6 +12,9 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "permissions")
 public class Permission implements GrantedAuthority, Serializable {
@@ -72,6 +75,6 @@ public class Permission implements GrantedAuthority, Serializable {
 		Permission other = (Permission) obj;
 		return Objects.equals(description, other.description) && Objects.equals(id, other.id);
 	}
-
+	
 }
 

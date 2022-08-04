@@ -31,7 +31,6 @@
 //
 //}
 //
-// VER SE PODE TIRAR ESSE PACOTE !! n
-// falta terminar essa classe, não esta completa!!!
+// VER SE PODE TIRAR ESSE PACOTE !!
 
 // nao vamos usar dto e sim VO

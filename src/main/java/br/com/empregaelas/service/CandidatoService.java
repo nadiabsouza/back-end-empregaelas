@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.empregaelas.adapter.DozerConverter;
+import br.com.empregaelas.domain.entity.Candidato;
 import br.com.empregaelas.domain.vo.v1.CandidatoVO;
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import br.com.empregaelas.exceptions.ResourceNotFoundException;
 import br.com.empregaelas.repository.CandidatoRepository;
 
@@ -17,9 +19,9 @@ public class CandidatoService {
 	CandidatoRepository repository;
 
 	public CandidatoVO create(CandidatoVO candidato) {
-		var entity = DozerConverter.parseObject(candidato, CandidatoVO.class);
-		var vo = DozerConverter.parseObject(entity, CandidatoVO.class);
-
+		candidato.setTipoPermissao(USER_PERMISSIONS.candidato);
+		var entity = DozerConverter.parseObject(candidato, Candidato.class);
+		var vo = DozerConverter.parseObject(repository.save(entity), CandidatoVO.class);
 		return vo;
 	}
 
@@ -59,11 +61,8 @@ public class CandidatoService {
 		entity.setPretensaoSalarial(candidato.getPretensaoSalarial());
 		entity.setDataCadastro(candidato.getDataCadastro());
 
-		
-		
 		var vo = DozerConverter.parseObject(repository.save(entity), CandidatoVO.class);
 		return vo;
 	}
 }
 
-// ##

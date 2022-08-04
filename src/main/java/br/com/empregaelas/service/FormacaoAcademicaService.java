@@ -49,12 +49,8 @@ public class FormacaoAcademicaService {
 		entity.setDataInicio(formacaoAcademica.getDataInicio());
 		entity.setDataFinal(formacaoAcademica.getDataFinal());
 		entity.setInformacoes_adicionais(formacaoAcademica.getInformacoesAdicionais());
-	
-		
+
 		var vo = DozerConverter.parseObject(repository.save(entity), FormacaoAcademicaVO.class);
 		return vo;
 	}
 }
-
-
-

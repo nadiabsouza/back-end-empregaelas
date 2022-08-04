@@ -18,6 +18,4 @@ public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
 
 }
 
-// ##
-
-// ver se precisa melhorar
+// ok revisar

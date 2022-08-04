@@ -9,7 +9,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empregaelas.domain.entity.FormacaoAcademica;
-import br.com.empregaelas.domain.vo.v1.CandidatoVO;
-import br.com.empregaelas.domain.vo.v1.ExperienciaVO;
 import br.com.empregaelas.domain.vo.v1.FormacaoAcademicaVO;
-import br.com.empregaelas.domain.vo.v1.FormacaoAcademicaVO;
-import br.com.empregaelas.service.ExperienciaService;
 import br.com.empregaelas.service.FormacaoAcademicaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -98,3 +92,5 @@ public class FormacaoAcademicaController {
 	}
 
 }
+
+
