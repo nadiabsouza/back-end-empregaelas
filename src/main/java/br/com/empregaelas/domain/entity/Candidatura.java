@@ -23,7 +23,7 @@ public class Candidatura{
 	
 	@ManyToOne
 	@MapsId("id")
-	@Column(name="id_usuario")
+	@Column(name="id_candidato")
 	Candidato candidato;
 	
 	@ManyToOne
@@ -35,7 +35,7 @@ public class Candidatura{
 	@Column(name="data_candidatura")
 	private Date data_candidatura;
 	
-	
+}	
 	
 	public Candidatura(
 			@NotBlank Date data_candidatura)

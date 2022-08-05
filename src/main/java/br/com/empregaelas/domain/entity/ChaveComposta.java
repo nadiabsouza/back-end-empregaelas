@@ -13,7 +13,7 @@ public class ChaveComposta implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="id_usuario")
+	@Column(name="id_candidato")
 	Long id_candidato;
 	
 

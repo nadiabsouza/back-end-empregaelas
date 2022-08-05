@@ -15,5 +15,6 @@ public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
 	Candidato findByEmail(String email);
 	
 	Candidato findByCpf(String cpf);
+	
 
 }
