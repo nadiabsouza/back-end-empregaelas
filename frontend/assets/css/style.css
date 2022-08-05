@@ -226,7 +226,7 @@ main {
 
 section#home-sobre {
     background: #E8E3E3;
-    padding: 80px 0;
+    padding: 80px 15px;
 }
 
 .form-container-acesso {
@@ -287,4 +287,28 @@ section#home-sobre {
 .form-container-acesso form input[type='submit']:focus {
     border: none !important;
     box-shadow: 0 0 0 3px #a3698650;
+}
+
+section#home-cadastrar {
+    padding: 80px 15px;
+    background: url('../img/home_candidatas.svg') no-repeat 5% bottom , url('../img/home_empresas.svg') no-repeat 95% bottom;
+    background-size: 350px;
+}
+
+section#home-cadastrar h3 {
+    color: #A36986;
+}
+
+section#home-destaques {
+    background: #EA8D8F;
+    padding: 80px 15px;    
+}
+
+section#home-vagas-recentes {
+    background: #EA8D8F;
+    padding: 80px 15px;
+}
+
+section#home-vagas-recentes h2 {
+    color: #fff;
 }
