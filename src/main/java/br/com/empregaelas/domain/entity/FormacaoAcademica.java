@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -31,8 +33,9 @@ public class FormacaoAcademica implements Serializable {
 	private long id;
 
 	@NotBlank
+	@ManyToOne
 	@JoinColumn(name = "id_candidato")
-	private long id_candidato;
+	private Candidato candidato;
 
 	@NotBlank
 	@Size(max = 13)

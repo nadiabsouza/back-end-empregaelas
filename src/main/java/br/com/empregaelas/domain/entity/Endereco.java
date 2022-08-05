@@ -63,5 +63,8 @@ public class Endereco implements Serializable {
 	@Column(name = "cep")
 	private String cep;
 
+	
+	
+	
 }
 

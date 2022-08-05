@@ -75,6 +75,8 @@ public class Empresa implements Serializable {
 	@Column(name = "num_func")
     private Integer numFunc;
 	
+	
+	
 }
 	
 	

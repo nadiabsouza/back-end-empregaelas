@@ -3,17 +3,24 @@ package br.com.empregaelas.domain.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import br.com.empregaelas.enums.Pcd;
 import br.com.empregaelas.enums.USER_PERMISSIONS;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,6 +28,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "ee_candidato")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Candidato implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -40,6 +48,7 @@ public class Candidato implements Serializable {
 	@Column(name = "senha")
 	private String senha;
 
+	@NotBlank
 	@Column(name = "tipo_permissao")
 	private USER_PERMISSIONS tipoPermissao;
 
@@ -48,15 +57,15 @@ public class Candidato implements Serializable {
 	@Column(name = "nome")
 	private String nome;
 
-
 	@Size(max = 20)
 	@Column(name = "nome_social")
 	private String nomeSocial;
 
+	@NotBlank
 	@Column(name = "data_nasc")
 	private Date dataNasc;
 
-
+	@NotBlank
 	@Size(max = 15)
 	@Column(name = "estado_civil")
 	private String estadoCivil;
@@ -92,7 +101,7 @@ public class Candidato implements Serializable {
 	private String sexoBio;
 
 
-	@Size(max = 255)
+	@Lob 
 	@Column(name = "sobre")
 	private String sobre;
 
@@ -110,11 +119,31 @@ public class Candidato implements Serializable {
 	@Column(name = "email")
 	private String email;
 
+	@NotBlank
 	@Column(name = "datacadastro")
 	private Date dataCadastro;
+	
+	@NotBlank
+	@Size(max = 11)
+	@Column(name = "telefone")
+	private String telefone;
+
+	
+	@NotNull
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id", referencedColumnName = "id")
+	private Endereco endereco; 
+	
+	@NotBlank
+	@Column(name = "pcd")
+	private Pcd pcd;
+	
+
 
 }
 	
+
+
 
 
 
