@@ -20,5 +20,25 @@ jQuery(window).resize(function() {
 
 jQuery(document).ready(function() {
     largura_bg_home_cadastrar();
+
+    //inicialização owl carousel
+
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            }
+        }
+    })
+
+
 });
+
+
 
