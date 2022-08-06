@@ -11,6 +11,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -102,10 +103,33 @@
             <div class="container-xl">
                 <div class="row">
                     <h2 class="text-center">Vagas mais recentes</h2>
-                    <div class="d-flex">
-                        <p class="text-center w-100"> #inserir loop cards vagas</p>
+                    <div class="container-cards-vagas d-flex">
+                        <div class="card-vaga d-flex flex-column">
+                            <div class="dados-empresa-vaga d-flex">
+                                <div class="logo-empresa">
+                                    <a href="#link-empresa"
+                                        style="background-image:url('https://media-exp1.licdn.com/dms/image/C4E0BAQEVEWVqVIMung/company-logo_200_200/0/1650319092343?e=1668038400&v=beta&t=rhFPM8y7W6Yc8u0-YcPgjLCOr85WMU3ZUALlzmYgnzY');">
+                                    </a>
+                                </div>
+                                <div class="nome-empresa-vaga d-flex flex-column justify-content-evenly">
+                                    <h3 class="titulo-vaga m-0"><a href="#link-vaga">Inserir título da vaga</a></h3>
+                                    <h4 class="nome-empresa m-0">Inserir nome empresa - Cidade - UF</h4>
+                                </div>
+                            </div>
+                            <div class="modalidade-nivel d-flex">
+                                <div class="modalidade d-flex w-50">
+                                    <i class="fa-solid fa-clock"></i><span>Inserir jornada</span>
+                                </div>
+                                <div class="nivel d-flex w-50">
+                                    <i class="fa-solid fa-person-dress"></i><span>Inserir nível</span>
+                                </div>
+                            </div>
+                            <div class="mais-info d-flex">
+                                <a href="#link-vaga" class="botao-1 w-100 text-center">Mais informações ++</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center mt-5">
                         <a href="#" class="botao-2">Procurar mais vagas ++</a>
                     </div>
                 </div>
@@ -113,11 +137,31 @@
         </section>
         <section id="home-empresas">
             <div class="container-xl">
-                <div class="row d-flex flex-column align-items-center">
-                    <h2 class="text-center">Empresas que já divulgam suas vagas no <span class="chaves">{</span>EmpregaElas<span class="chaves">}</span></h2>
-                    <p class="text-center">Conheça as empresas que já estão trabalhando em prol da equidade de gênero em
-                        seus departamentos</p>
-                    <div class="text-center mb-5">#inserir carrossel cards empresas</div>
+                <div class="row d-flex flex-column">
+                    <h2 class="text-center">Empresas que já divulgam suas vagas no <span
+                            class="chaves">{</span>EmpregaElas<span class="chaves">}</span></h2>
+                    <div class="intro">
+                        <p class="text-center">Conheça as empresas que já estão trabalhando em prol da equidade de
+                            gênero em
+                            seus departamentos</p>
+                    </div>
+                    <div class="col-8 offset-2 my-5"">
+                        <div class=" owl-carousel owl-theme">
+                        <div class="card-empresa-carrossel item d-flex">
+                            <div class="logo-empresa-carrossel">
+                                <a href="#link-empresa"
+                                    style="background-image:url('https://media-exp1.licdn.com/dms/image/C4E0BAQEVEWVqVIMung/company-logo_200_200/0/1650319092343?e=1668038400&v=beta&t=rhFPM8y7W6Yc8u0-YcPgjLCOr85WMU3ZUALlzmYgnzY');">
+                                </a>
+                            </div>
+                            <div class="info-empresa-carrossel d-flex flex-column justify-content-evenly">
+                                <h3 class="nome-empresa-carrossel">Inserir nome da empresa</h3>
+                                <p>Inserir ramo da empresa</p>
+                                <p>inserir num-funcionários empresa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-home-empresas d-flex flex-column align-items-center">
                     <p class="text-center">Recrutador! Participe também dessa transformação!</p>
                     <a href="#" class="botao-1">Divulgar vagas para mulheres ++</a>
                 </div>
@@ -135,9 +179,7 @@
                 </div>
             </div>
         </section>
-
     </main>
-
     <footer>
         <div class="container-xl">
             <div class="row d-flex align-items-center">
@@ -159,7 +201,7 @@
                     </ul>
                 </div>
                 <div class="col-4">
-                    <h3 class="text-center">Apoio:</p>
+                    <h3 class="text-center">Apoio:</h3>
                     <div class="apoio-footer d-flex w-100 justify-content-center">
                         <img src="assets/img/logo_serasa_footer.svg">
                         <img src="assets/img/logo_dh_footer.svg">
@@ -173,14 +215,16 @@
                     <p class="text-center">{EmpregaElas} ©2022 - Desenvolvido por Jupyterianas</p>
                 </div>
             </div>
-        </div>        
+        </div>
     </footer>
 
 
 
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d3de6c956f.js" crossorigin="anonymous"></script>
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
