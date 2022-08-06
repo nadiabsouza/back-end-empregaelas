@@ -103,7 +103,7 @@ header {
     padding: 0 15px;
 }
 
-a.botao_1 {
+a.botao-1 {
     padding: 13px 30px 10px;
     margin-top: 15px;
     background: #A36986;
@@ -116,8 +116,25 @@ a.botao_1 {
     width: fit-content;
 }
 
-a.botao_1:hover {
+a.botao-1:hover {
     background: #AE9BBA;
+}
+
+a.botao-2 {
+    padding: 13px 30px 10px;
+    margin-top: 15px;
+    background:#fff;
+    color:#555;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+a.botao-2:hover {
+    background:#E8E3E3;
 }
 
 nav.menu-desktop ul li{
@@ -226,7 +243,7 @@ main {
 
 section#home-sobre {
     background: #E8E3E3;
-    padding: 80px 0;
+    padding: 80px 15px;
 }
 
 .form-container-acesso {
@@ -288,3 +305,105 @@ section#home-sobre {
     border: none !important;
     box-shadow: 0 0 0 3px #a3698650;
 }
+
+section#home-cadastrar {
+    padding: 80px 15px;
+    background: url('../img/home_candidatas.svg') no-repeat 5% bottom , url('../img/home_empresas.svg') no-repeat 95% bottom;
+    background-size: 350px;
+}
+
+section#home-cadastrar h3 {
+    color: #A36986;
+}
+
+section#home-destaques {
+    background: #EA8D8F;
+
+    padding: 80px 15px;    
+}
+
+section#home-vagas-recentes {
+    background: #EA8D8F;
+    padding: 80px 15px;
+}
+
+section#home-vagas-recentes h2 {
+    color: #fff;
+}
+
+section#home-empresas {
+    background: #E8E3E3;
+    padding: 80px 15px;
+}
+
+section#home-empresas h2 {
+    font-size: 2em;
+    color: #A36986;
+}
+
+section#home-empresas p {
+    max-width: 500px;
+}
+
+section#home-cta-cadastro {
+    background-color: #AE9BBA;
+    background-image: url(../img/emprega_elas_home_cadastre_se_ja.jpg);
+    background-size: 50%;
+    background-position:100%;
+    background-repeat: no-repeat;
+    padding: 115px 15px;
+}
+
+.home-cta-cadastro-texto {
+    max-width: 400px;
+}
+
+section#home-cta-cadastro h2 , section#home-cta-cadastro p {
+    color: #fff;
+}
+
+section#home-cta-cadastro .botao-2 {
+    color: #A36986;
+    margin-top: 15px;
+}
+
+footer {
+    background: #A36986;
+    color:#fff;
+}
+
+footer .logo-footer a img {
+    width: 100%;
+    max-width: 350px;
+}
+
+footer ul li {
+    padding: 5px 0;
+}
+
+footer ul li a {
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+footer ul li a:hover {
+    color: #E8E3E3;
+}
+
+footer h3 {
+    font-size: 1em;
+    font-weight: 400;    
+}
+
+footer .apoio-footer img {
+    padding: 0 15px;
+}
+
+footer .copy {
+    background: #E8E3E3;
+    color: #555;
+    font-size: 0.75em;
+    font-weight: 400;
+    padding: 5px 0;
+}
+
