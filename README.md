@@ -13,15 +13,16 @@
 HTML<br />
 CSS<br />
 MySQL<br />
-jQuery<br />
+Javascript<br />
 Angular</p>
 
 
 <h2>Frameworks</h2>
 <p>Spring Boot<br />
 Spring Security<br />
-Angular</br >
-Lombok
+Angular<br />
+Lombok<br />
+jQuery
 </p>
 
 
