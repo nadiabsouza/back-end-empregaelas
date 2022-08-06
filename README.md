@@ -13,7 +13,7 @@
 HTML<br />
 CSS<br />
 MySQL<br />
-Javascript<br />
+jQuery<br />
 Angular</p>
 
 
