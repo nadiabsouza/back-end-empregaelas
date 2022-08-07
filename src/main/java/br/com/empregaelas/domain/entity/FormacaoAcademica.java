@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -52,15 +51,17 @@ public class FormacaoAcademica implements Serializable {
 	@Column(name = "instituicao")
 	private String instituicao;
 
+	@NotBlank
 	@Column(name = "dataInicio")
 	private Date dataInicio;
 
+	@NotBlank
 	@Column(name = "dataFinal")
 	private Date dataFinal;
 
-	@NotBlank
+	
 	@Lob
 	@Column(name = "informacoes_adicionais")
-	private String informacoes_adicionais;
+	private String informacoesAdicionais;
 }
 

@@ -36,8 +36,6 @@ import lombok.NoArgsConstructor;
 		@JoinColumn(name = "id_empresaV")
 		private Empresa empresa;
 		
-		// *********** falar com Flavia sobre relacionamento ***********************
-		
 
 		@NotBlank
 		@Size(max=1)
@@ -101,9 +99,9 @@ import lombok.NoArgsConstructor;
 	    private String beneficios;
 
 
-//		@Size(max=2)
-//		@Column(name="uf")
-//	    private Byte uf;
+		@Size(max=2)
+		@Column(name="uf")
+	    private char uf;
 
 
 		@Size(max=30)

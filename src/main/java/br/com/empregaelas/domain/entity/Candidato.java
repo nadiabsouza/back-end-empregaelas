@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,21 +39,21 @@ public class Candidato implements Serializable {
 	@Column(name = "id")
 	private long id;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 11)
 	@Column(name = "cpf")
 	private String cpf;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 50)
 	@Column(name = "senha")
 	private String senha;
 
-	@NotBlank
+	@NotNull
 	@Column(name = "tipo_permissao")
 	private USER_PERMISSIONS tipoPermissao;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 60)
 	@Column(name = "nome")
 	private String nome;
@@ -61,11 +62,11 @@ public class Candidato implements Serializable {
 	@Column(name = "nome_social")
 	private String nomeSocial;
 
-	@NotBlank
+	@NotNull
 	@Column(name = "data_nasc")
 	private Date dataNasc;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 15)
 	@Column(name = "estado_civil")
 	private String estadoCivil;
@@ -85,17 +86,17 @@ public class Candidato implements Serializable {
 	@Column(name = "portfolio")
 	private String portfolio;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 10)
 	@Column(name = "raca")
 	private String raca;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 20)
 	@Column(name = "genero")
 	private String genero;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 9)
 	@Column(name = "sexobio")
 	private String sexoBio;
@@ -113,13 +114,13 @@ public class Candidato implements Serializable {
 	@Column(name = "pretensaosalarial")
 	private double pretensaoSalarial;
 
-	@NotBlank
+	@NotNull
 	@Size(max = 50)
 	@Email
 	@Column(name = "email")
 	private String email;
 
-	@NotBlank
+	@NotNull
 	@Column(name = "datacadastro")
 	private Date dataCadastro;
 	
@@ -129,15 +130,16 @@ public class Candidato implements Serializable {
 	private String telefone;
 
 	
+//	@Embedded
+//	private Endereco endereco;
+	
+	@Column(name = "pcd")
+	private Pcd pcd;
+	
 	@NotNull
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id", referencedColumnName = "id")
 	private Endereco endereco; 
-	
-	@NotBlank
-	@Column(name = "pcd")
-	private Pcd pcd;
-	
 
 
 }

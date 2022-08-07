@@ -3,6 +3,7 @@ package br.com.empregaelas.domain.entity;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -75,7 +76,7 @@ public class Empresa implements Serializable {
 	@Column(name = "num_func")
     private Integer numFunc;
 	
-	
+	//@Embeddable para endereço
 	
 }
 	

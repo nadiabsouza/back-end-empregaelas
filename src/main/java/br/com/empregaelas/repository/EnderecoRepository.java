@@ -13,7 +13,6 @@ import br.com.empregaelas.domain.entity.Endereco;
 public interface EnderecoRepository extends JpaRepository<Endereco, Long>{
 	List<Endereco> findByCep(String cep);
 	
-	
 
 	}
 	

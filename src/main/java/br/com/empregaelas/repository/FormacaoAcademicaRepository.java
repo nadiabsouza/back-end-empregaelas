@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 
 import br.com.empregaelas.domain.entity.FormacaoAcademica;
+import br.com.empregaelas.domain.entity.Vaga;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

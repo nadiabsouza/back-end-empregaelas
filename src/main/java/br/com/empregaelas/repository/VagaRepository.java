@@ -12,6 +12,6 @@ public interface VagaRepository extends JpaRepository<Vaga, Long> {
 	
 	List<Vaga> findByPublicada(String publicada);
 	
-	
+	Vaga findByTipoContrato(String tipoContrato);
 }
 

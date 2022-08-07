@@ -52,7 +52,7 @@ public class Experiencia implements Serializable {
 	@NotBlank
 	@Size(max = 1)
 	@Column(name = "empregoAtual")
-	private Byte empregoAtual;
+	private Boolean empregoAtual;
 
 	@Column(name = "dataSaida")
 	private Date dataSaida;
@@ -62,7 +62,10 @@ public class Experiencia implements Serializable {
 	@Column(name = "atribuicoes")
 	private String atribuicoes;
 
-
+	@NotBlank
+	@Size(max = 30)
+	@Column(name = "tipo_contrato")
+	private String tipoContrato;
 	
 	
 }
