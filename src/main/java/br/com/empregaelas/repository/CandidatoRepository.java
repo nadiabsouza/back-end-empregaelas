@@ -9,12 +9,13 @@ import br.com.empregaelas.domain.entity.Candidato;
 
 @Repository
 public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
-
+	// faz a paginação dos dados retornados que satisfaçam a busca
 	List<Candidato> findByNome(String nome);
 
 	Candidato findByEmail(String email);
-	
+
 	Candidato findByCpf(String cpf);
-	
 
 }
+
+// ok revisar

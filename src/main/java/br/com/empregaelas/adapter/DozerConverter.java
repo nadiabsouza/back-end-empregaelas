@@ -11,11 +11,6 @@ public class DozerConverter {
 	private static Mapper mapper = DozerBeanMapperBuilder.buildDefault();
 	
 	
-	
-	//SourceClassName = origem do objeto que sera convertido
-	//DestinationClassName = para qual classe o objeto tera um novo formato
-	//mapper.map = faz a transferencia de informação de uma classe origem para seu destino
-	
 	public static <SourceClassName, DestinationClassName> DestinationClassName
 	    parseObject(SourceClassName source,Class<DestinationClassName> destination) {
 		return mapper.map(source, destination);
@@ -35,4 +30,5 @@ public class DozerConverter {
     
 }   
     	
+
     

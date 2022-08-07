@@ -3,28 +3,31 @@ package br.com.empregaelas.security;
 import java.io.Serializable;
 import java.util.Objects;
 
+import lombok.Data;
+
+@Data
 public class CredenciaisContaVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String cpfOuCnpj;
+	private String email;
 	private String senha;
 
 	public CredenciaisContaVO() {
 
 	}
 
-	public CredenciaisContaVO(String cpfOuCnpj, String senha) {
-		this.cpfOuCnpj = cpfOuCnpj;
+	public CredenciaisContaVO(String email, String senha) {
+		this.email = email;
 		this.senha = senha;
 	}
 
 	public String getCpfOuCnpj() {
-		return cpfOuCnpj;
+		return email;
 	}
 
-	public void setCpfOuCnpj(String cpfOuCnpj) {
-		this.cpfOuCnpj = cpfOuCnpj;
+	public void setCpfOuCnpj(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
@@ -37,7 +40,7 @@ public class CredenciaisContaVO implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(senha, cpfOuCnpj);
+		return Objects.hash(senha, email);
 	}
 
 	@Override
@@ -49,9 +52,7 @@ public class CredenciaisContaVO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		CredenciaisContaVO other = (CredenciaisContaVO) obj;
-		return Objects.equals(senha, other.senha) && Objects.equals(cpfOuCnpj, other.cpfOuCnpj);
+		return Objects.equals(senha, other.senha) && Objects.equals(email, other.email);
 	}
 
 }
-
-// entender melhor essa classe
