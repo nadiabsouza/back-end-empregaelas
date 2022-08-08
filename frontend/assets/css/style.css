@@ -9,12 +9,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-	margin: 0 0 15px !important;
+	margin: 0 0 15px;
     padding: 0;
 }
 
 h1.margin-0 h2.margin-0, h3.margin-0, h4.margin-0, h5.margin-0, h6.margin-0 {
-	margin: 0 !important;
+	margin: 0;
 }
 
 h1, h2, h3  {
@@ -158,6 +158,7 @@ nav.menu-desktop ul li a {
     border-radius: 3px;
     padding: 15px 30px 12px;
     transition: .3s;
+    cursor: pointer;
 }
 
 .botao-header-cadastro:hover {
@@ -247,17 +248,19 @@ section#home-sobre {
 }
 
 .form-container-acesso {
-    display: flex;
-    height: 100%;
+    border-radius: 5px;
+    padding: 30px;
+    background: #E8E3E3;
+}
+
+.form-container-acesso h2 {
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .form-container-acesso form {
     width: 100%;
-    max-width: 450px;
-    background: #E8E3E3;
-    padding: 30px;
-    border-radius: 5px;
-    height: fit-content;
     border: none !important;
 }
 
@@ -304,6 +307,27 @@ section#home-sobre {
 .form-container-acesso form input[type='submit']:focus {
     border: none !important;
     box-shadow: 0 0 0 3px #a3698650;
+}
+
+.form-container-acesso h2.link-cadastro {
+    font-size: 1.1em;
+    margin: 15px 0 0;
+}
+
+.form-container-acesso p.recuperar-senha {
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.form-container-acesso p.recuperar-senha a {
+    color: #A36986;
+}
+
+.form-container-acesso h2.link-cadastro a {
+    color: #A36986;
+    text-decoration: underline;
+    margin-top: 20px;
 }
 
 section#home-cadastrar {
