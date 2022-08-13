@@ -56,17 +56,6 @@ public class CandidatoController {
 		return candidatoVO;
 	}
 
-	// criar candidato
-
-//	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
-//			"application/xml" })
-//	@Operation(summary = "Cadastrar candidato")
-//	@ResponseStatus(value = HttpStatus.CREATED)
-//	public CandidatoVO create(@Valid @RequestBody CandidatoVO candidato) {
-//		CandidatoVO candidatoVO = service.create(candidato);
-//		candidatoVO.add(linkTo(methodOn(CandidatoController.class).findById(candidatoVO.getKey())).withSelfRel());
-//		return candidatoVO;
-//	}
 
 	// atualizar candidato
 	@PutMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",

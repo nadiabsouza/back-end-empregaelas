@@ -20,25 +20,23 @@ public class ExperienciaVO extends RepresentationModel<ExperienciaVO> implements
 	
 	
 	@Mapping("id")
-	private long Key;
+	private long key;
 	private String contratante;
 	private String cargo;
 	private Date dataInicio;
-	private Byte empregoAtual;
+	private Boolean empregoAtual;
 	private Date dataSaida;
 	private String atribuicoes;
-	private String linkedin;
-	private String gitHub;
-	private String portfolio;
-	private String raca;
+	private String tipoContrato;
+
+	
 	
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(Key, atribuicoes, cargo, contratante, dataInicio, dataSaida,
-				empregoAtual, gitHub, linkedin, portfolio, raca);
+		result = prime * result + Objects.hash(key, atribuicoes, cargo, contratante,tipoContrato,dataInicio,empregoAtual);
 		return result;
 	}
 	
@@ -52,11 +50,9 @@ public class ExperienciaVO extends RepresentationModel<ExperienciaVO> implements
 		if (getClass() != obj.getClass())
 			return false;
 		ExperienciaVO other = (ExperienciaVO) obj;
-		return Key == other.Key && Objects.equals(atribuicoes, other.atribuicoes) && Objects.equals(cargo, other.cargo)
+		return key == other.key && Objects.equals(atribuicoes, other.atribuicoes) && Objects.equals(cargo, other.cargo)
 				&& Objects.equals(contratante, other.contratante) && Objects.equals(dataInicio, other.dataInicio)
-				&& Objects.equals(dataSaida, other.dataSaida) && Objects.equals(empregoAtual, other.empregoAtual)
-				&& Objects.equals(gitHub, other.gitHub) && Objects.equals(linkedin, other.linkedin)
-				&& Objects.equals(portfolio, other.portfolio) && Objects.equals(raca, other.raca);
+				&& Objects.equals(tipoContrato, other.tipoContrato) && Objects.equals(empregoAtual, other.empregoAtual);
 	}
 	
 

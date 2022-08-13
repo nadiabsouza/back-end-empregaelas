@@ -2,13 +2,13 @@ package br.com.empregaelas.service;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.empregaelas.adapter.DozerConverter;
+import br.com.empregaelas.domain.entity.Empresa;
 import br.com.empregaelas.domain.vo.v1.EmpresaVO;
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import br.com.empregaelas.exceptions.ResourceNotFoundException;
 import br.com.empregaelas.repository.EmpresaRepository;
 
@@ -17,12 +17,11 @@ public class EmpresaService {
 
 	@Autowired
 	EmpresaRepository repository;
-
-	public EmpresaVO create(@Valid EmpresaVO empresa) {
-		var entity = DozerConverter.parseObject(empresa, EmpresaVO.class);
-		var vo = DozerConverter.parseObject(entity, EmpresaVO.class);
-
-		return vo;
+	
+	public EmpresaVO create(Empresa empresa) {
+		empresa.setTipoPermissao(USER_PERMISSIONS.empresa);
+		var empresaVO = DozerConverter.parseObject(repository.save(empresa), EmpresaVO.class);
+		return empresaVO;
 	}
 
 	public List<EmpresaVO> findAll() {
@@ -41,13 +40,13 @@ public class EmpresaService {
 		repository.delete(entity);
 	}
 
-	public EmpresaVO update(EmpresaVO empresa) {
-		var entity = repository.findById(empresa.getKey())
+	public EmpresaVO update(Empresa empresa) {
+		var entity = repository.findById(empresa.getId())
 				.orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado registro com esse Id"));
 
 		entity.setCnpj(empresa.getCnpj());
-		entity.setRazaoSocial(empresa.getRazaosocial());
-		entity.setNomeFantasia(empresa.getNomefantasia());
+		entity.setRazaoSocial(empresa.getRazaoSocial());
+		entity.setNomeFantasia(empresa.getNomeFantasia());
 		entity.setTelefone(empresa.getTelefone());
 		entity.setResponsavel(empresa.getResponsavel());
 		entity.setSegmento(empresa.getSegmento());

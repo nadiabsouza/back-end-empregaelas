@@ -2,28 +2,34 @@ package br.com.empregaelas.service;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.empregaelas.adapter.DozerConverter;
+import br.com.empregaelas.domain.entity.Experiencia;
 import br.com.empregaelas.domain.vo.v1.ExperienciaVO;
 import br.com.empregaelas.exceptions.ResourceNotFoundException;
-import br.com.empregaelas.repository.EmpresaRepository;
+import br.com.empregaelas.repository.ExperienciaRepository;
 
 @Service
 public class ExperienciaService {
 
 	@Autowired
-	EmpresaRepository repository;
-
-	public ExperienciaVO create(@Valid ExperienciaVO empresa) {
-		var entity = DozerConverter.parseObject(empresa, ExperienciaVO.class);
-		var vo = DozerConverter.parseObject(entity, ExperienciaVO.class);
-
-		return vo;
+	ExperienciaRepository repository;
+	
+	
+	public ExperienciaVO create(Experiencia experiencia) {
+		var experienciaVO = DozerConverter.parseObject(repository.save(experiencia), ExperienciaVO.class);
+		return experienciaVO;
 	}
+	
+	
+//	public ExperienciaVO create(@Valid ExperienciaVO empresa) {
+//		var entity = DozerConverter.parseObject(empresa, ExperienciaVO.class);
+//		var vo = DozerConverter.parseObject(entity, ExperienciaVO.class);
+//
+//		return vo;
+//	}
 
 	public List<ExperienciaVO> findAll() {
 		return DozerConverter.parseListObject(repository.findAll(), ExperienciaVO.class);

@@ -18,11 +18,10 @@ public class CandidatoService {
 	@Autowired
 	CandidatoRepository repository;
 
-	public CandidatoVO create(CandidatoVO candidato) {
+	public CandidatoVO create(Candidato candidato) {
 		candidato.setTipoPermissao(USER_PERMISSIONS.candidato);
-		var entity = DozerConverter.parseObject(candidato, Candidato.class);
-		var vo = DozerConverter.parseObject(repository.save(entity), CandidatoVO.class);
-		return vo;
+		var candidatoVO = DozerConverter.parseObject(repository.save(candidato), CandidatoVO.class);
+		return candidatoVO;
 	}
 
 	public List<CandidatoVO> findAll() {

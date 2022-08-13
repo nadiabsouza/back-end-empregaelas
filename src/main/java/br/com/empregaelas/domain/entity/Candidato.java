@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +29,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Candidato implements Serializable {
+public class Candidato implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
@@ -49,7 +48,7 @@ public class Candidato implements Serializable {
 	@Column(name = "senha")
 	private String senha;
 
-	@NotNull
+	
 	@Column(name = "tipo_permissao")
 	private USER_PERMISSIONS tipoPermissao;
 
@@ -120,7 +119,7 @@ public class Candidato implements Serializable {
 	@Column(name = "email")
 	private String email;
 
-	@NotNull
+    //@NotNull
 	@Column(name = "datacadastro")
 	private Date dataCadastro;
 	
@@ -130,17 +129,13 @@ public class Candidato implements Serializable {
 	private String telefone;
 
 	
-//	@Embedded
-//	private Endereco endereco;
-	
 	@Column(name = "pcd")
 	private Pcd pcd;
 	
-	@NotNull
+//  @NotNull
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id", referencedColumnName = "id")
-	private Endereco endereco; 
-
+	private Endereco endereco;
 
 }
 	

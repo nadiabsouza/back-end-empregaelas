@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.empregaelas.adapter.DozerConverter;
+import br.com.empregaelas.domain.entity.Candidato;
+import br.com.empregaelas.domain.entity.Vaga;
+import br.com.empregaelas.domain.vo.v1.CandidatoVO;
 import br.com.empregaelas.domain.vo.v1.VagaVO;
+import br.com.empregaelas.enums.USER_PERMISSIONS;
 import br.com.empregaelas.exceptions.ResourceNotFoundException;
 import br.com.empregaelas.repository.VagaRepository;
 
@@ -15,13 +19,21 @@ public class VagaService {
 
 	@Autowired
 	VagaRepository repository;
-
-	public VagaVO create(VagaVO vaga) {
-		var entity = DozerConverter.parseObject(vaga, VagaVO.class);
-		var vo = DozerConverter.parseObject(entity, VagaVO.class);
-
-		return vo;
+	
+	
+	public VagaVO create(Vaga vaga) {
+		var vagaVO = DozerConverter.parseObject(repository.save(vaga), VagaVO.class);
+		return vagaVO;
 	}
+	
+	
+
+//	public VagaVO create(VagaVO vaga) {
+//		var entity = DozerConverter.parseObject(vaga, VagaVO.class);
+//		var vo = DozerConverter.parseObject(entity, VagaVO.class);
+//
+//		return vo;
+//	}
 
 	public List<VagaVO> findAll() {
 		return DozerConverter.parseListObject(repository.findAll(), VagaVO.class);
@@ -43,7 +55,7 @@ public class VagaService {
 		var entity = repository.findById(vaga.getKey())
 				.orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado registro com esse Id"));
 
-		entity.setPublicada(vaga.getPublicada());
+//		entity.setPublicada(vaga.getPublicada());
 		entity.setDataPublicacao(vaga.getDataPublicacao());
 		entity.setCargo(vaga.getCargo());
 		entity.setNivel(vaga.getNivel());

@@ -31,9 +31,9 @@ public class Experiencia implements Serializable {
 	@Column(name = "id")
 	private long id;
 
-	@NotBlank
+	@ManyToOne
 	@JoinColumn(name = "id_candidato")
-	private long id_candidato;
+	private Candidato candidato;
 
 	@NotBlank
 	@Size(max = 30)
@@ -45,16 +45,13 @@ public class Experiencia implements Serializable {
 	@Column(name = "cargo")
 	private String cargo;
 
-	@NotBlank
-	@Column(name = "dataInicio")
+	@Column(name = "data_inicio")
 	private Date dataInicio;
 
-	@NotBlank
-	@Size(max = 1)
-	@Column(name = "empregoAtual")
+	@Column(name = "emprego_atual")
 	private Boolean empregoAtual;
 
-	@Column(name = "dataSaida")
+	@Column(name = "data_saida")
 	private Date dataSaida;
 
 	@NotBlank
@@ -66,6 +63,5 @@ public class Experiencia implements Serializable {
 	@Size(max = 30)
 	@Column(name = "tipo_contrato")
 	private String tipoContrato;
-	
-	
+
 }

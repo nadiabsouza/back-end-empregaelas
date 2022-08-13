@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,104 +20,81 @@ import lombok.NoArgsConstructor;
 @Table(name = "ee_vaga")
 @Data
 @NoArgsConstructor
-	public class Vaga implements Serializable{
+public class Vaga implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 
-		private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private long id;
 
-		@Id
-		@GeneratedValue(strategy=GenerationType.IDENTITY)
-		@Column(name="id")
-		private long id;
+	@ManyToOne
+	@JoinColumn(name = "id_empresa")
+	private Empresa empresa;
 
-		@NotBlank
-		@ManyToOne
-		@JoinColumn(name = "id_empresaV")
-		private Empresa empresa;
-		
+	@Column(name = "publicada")
+	private Integer publicada;
 
-		@NotBlank
-		@Size(max=1)
-		@Column(name="publicada")
-		private int publicada;
+	@Column(name = "datapublicacao")
+	private Date dataPublicacao;
 
+	@NotBlank
+	@Size(max = 30)
+	@Column(name = "cargo")
+	private String cargo;
 
-		@Size(max=8)
-		@Column(name="datapublicacao")
-		private Date dataPublicacao;
+	@NotBlank
+	@Size(max = 20)
+	@Column(name = "nivel")
+	private String nivel;
 
+	@NotBlank
+	@Size(max = 30)
+	@Column(name = "jornada")
+	private String jornada;
 
-		@NotBlank
-		@Size(max=30)
-		@Column(name="cargo")
-		private String cargo;
+	@Column(name = "salario")
+	private double salario;
 
+	@NotBlank
+	@Size(max = 9)
+	@Column(name = "tipo_contrato")
+	private String tipoContrato;
 
-		@NotBlank
-		@Size(max=20)
-		@Column(name="nivel")
-		private String nivel;
+	@NotBlank
+	@Size(max = 30)
+	@Column(name = "modalidade")
+	private String modalidade;
 
-		@NotBlank
-		@Size(max=30)
-		@Column(name="jornada")
-		private String jornada;
+	@Size(max = 255)
+	@Column(name = "descrvaga")
+	private String descrVaga;
 
+	@Column(name = "requisitos")
+	private String requisitos;
 
-		@Size(max=30)
-		@Column(name="salario")
-		private double salario;
+	@Size(max = 30)
+	@Column(name = "desejavel")
+	private String desejavel;
 
-		@NotBlank
-		@Size(max=9)
-		@Column(name="tipo_contrato")
-		private String tipoContrato;
+	@Size(max = 30)
+	@Column(name = "beneficios")
+	private String beneficios;
 
-		@NotBlank
-		@Size(max=30)
-		@Column(name="modalidade")
-		private String modalidade;
+	@Column(name = "uf")
+	private Character uf;
 
+	@Size(max = 30)
+	@Column(name = "cidade")
+	private String cidade;
 
-		@Size(max=255)
-		@Column(name="descrvaga")
-		private String descrVaga;
+	@Size(max = 30)
+	@Column(name = "bairro")
+	private String bairro;
 
+	@Size(max = 10)
+	@Column(name = "cep")
+	private String cep;
 
-		@Column(name="requisitos")
-		private String requisitos;
-
-
-		@Size(max=30)
-		@Column(name="desejavel")
-	    private String desejavel;
-
-
-		@Size(max=30)
-		@Column(name="beneficios")
-	    private String beneficios;
-
-
-		@Size(max=2)
-		@Column(name="uf")
-	    private char uf;
-
-
-		@Size(max=30)
-		@Column(name="cidade")
-	    private String cidade;
-
-
-		@Size(max=30)
-		@Column(name="bairro")
-	    private String bairro;
-
-
-		@Size(max=10)
-		@Column(name="cep")
-	    private String cep;
-
-	}
-
-
-
+}

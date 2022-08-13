@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.empregaelas.domain.entity.Experiencia;
 import br.com.empregaelas.domain.vo.v1.ExperienciaVO;
 import br.com.empregaelas.service.ExperienciaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,7 +35,6 @@ public class ExperienciaController {
 	@Autowired
 	ExperienciaService service;
 
-	
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
 	@Operation(summary = "Listar todos as experiencias")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -45,7 +46,6 @@ public class ExperienciaController {
 		return experienciasVO;
 	}
 
-	
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml" })
 	@Operation(summary = "Procurar experiencia por ID")
 	@ResponseStatus(value = HttpStatus.OK)
@@ -55,19 +55,18 @@ public class ExperienciaController {
 		return experienciaVO;
 	}
 
-	
-
+	@PreAuthorize("hasAnyAuthority('candidato')")
 	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
 	@Operation(summary = "Cadastrar experiencia")
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public ExperienciaVO create(@Valid @RequestBody ExperienciaVO experiencia) {
+	public ExperienciaVO create(@RequestBody Experiencia experiencia) {
 		ExperienciaVO experienciaVO = service.create(experiencia);
 		experienciaVO.add(linkTo(methodOn(ExperienciaController.class).findById(experienciaVO.getKey())).withSelfRel());
 		return experienciaVO;
 	}
 
-	
+	@PreAuthorize("hasAnyAuthority('candidato')")
 	@PutMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
 	@Operation(summary = "Atualizar experiencia")
@@ -87,5 +86,3 @@ public class ExperienciaController {
 	}
 
 }
-
-

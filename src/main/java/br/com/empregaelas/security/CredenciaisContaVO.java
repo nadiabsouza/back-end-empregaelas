@@ -22,11 +22,11 @@ public class CredenciaisContaVO implements Serializable {
 		this.senha = senha;
 	}
 
-	public String getCpfOuCnpj() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setCpfOuCnpj(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.empregaelas.domain.entity.Empresa;
 import br.com.empregaelas.domain.vo.v1.EmpresaVO;
 import br.com.empregaelas.service.EmpresaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,17 +35,6 @@ public class EmpresaController {
 	@Autowired
 	EmpresaService service;
 
-	@PreAuthorize("hasAnyAuthority('empresa')")
-	@RequestMapping(method = RequestMethod.GET, produces = { "application/json", "application/xml" })
-	@Operation(summary = "Listar todos as empresas")
-	@ResponseStatus(value = HttpStatus.OK)
-	public List<EmpresaVO> findAll() {
-		List<EmpresaVO> empresasVO = service.findAll();
-		empresasVO.stream()
-				.forEach(p -> p.add(linkTo(methodOn(EmpresaController.class).findById(p.getKey())).withSelfRel()));
-
-		return empresasVO;
-	}
 
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml" })
 	@Operation(summary = "Procurar empresa por ID")
@@ -55,27 +45,18 @@ public class EmpresaController {
 		return empresaVO;
 	}
 
-	@PostMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
-			"application/xml" })
-	@Operation(summary = "Cadastrar empresa")
-	@ResponseStatus(value = HttpStatus.CREATED)
-	public EmpresaVO create(@Valid @RequestBody EmpresaVO empresa) {
-		EmpresaVO empresaVO = service.create(empresa);
-		empresaVO.add(linkTo(methodOn(EmpresaController.class).findById(empresaVO.getKey())).withSelfRel());
-		return empresaVO;
-	}
-
+	@PreAuthorize("hasAnyAuthority('empresa')")
 	@PutMapping(consumes = { "application/json", "application/xml" }, produces = { "application/json",
 			"application/xml" })
 	@Operation(summary = "Atualizar empresa")
 	@ResponseStatus(value = HttpStatus.OK)
-	public EmpresaVO update(@Valid @RequestBody EmpresaVO empresa) {
+	public EmpresaVO update(@RequestBody Empresa empresa) {
 		EmpresaVO empresaVO = service.update(empresa);
 		empresaVO.add(linkTo(methodOn(EmpresaController.class).findById(empresaVO.getKey())).withSelfRel());
 		return empresaVO;
 
 	}
-
+	
 	@DeleteMapping(value = "/{id}")
 	@Operation(summary = "Deletar empresa")
 	@ResponseStatus(value = HttpStatus.OK)

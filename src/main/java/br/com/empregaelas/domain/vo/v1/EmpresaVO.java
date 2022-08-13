@@ -19,13 +19,12 @@ public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Seriali
 	private static final long serialVersionUID = 1L;
 
 	@Mapping("id")
-	private long Key;
+	private long key;
 	private String cnpj;
-	private String senha;
 	private USER_PERMISSIONS tipoPermissao;
 	private String email;
-	private String razaosocial;
-	private String nomefantasia;
+	private String razaoSocial;
+	private String nomeFantasia;
 	private String telefone;
 	private String responsavel;
 	private String segmento;
@@ -35,8 +34,8 @@ public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Seriali
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(Key, cnpj, email, nomefantasia, numFunc, razaosocial, responsavel,
-				segmento, senha, telefone, tipoPermissao);
+		result = prime * result + Objects.hash(key, cnpj, email, nomeFantasia, numFunc, razaoSocial, responsavel,
+				segmento,telefone, tipoPermissao);
 		return result;
 	}
 
@@ -49,10 +48,10 @@ public class EmpresaVO extends RepresentationModel<EmpresaVO> implements Seriali
 		if (getClass() != obj.getClass())
 			return false;
 		EmpresaVO other = (EmpresaVO) obj;
-		return Key == other.Key && Objects.equals(cnpj, other.cnpj) && Objects.equals(email, other.email)
-				&& Objects.equals(nomefantasia, other.nomefantasia) && numFunc == other.numFunc
-				&& Objects.equals(razaosocial, other.razaosocial) && Objects.equals(responsavel, other.responsavel)
-				&& Objects.equals(segmento, other.segmento) && Objects.equals(senha, other.senha)
+		return key == other.key && Objects.equals(cnpj, other.cnpj) && Objects.equals(email, other.email)
+				&& Objects.equals(nomeFantasia, other.nomeFantasia) && numFunc == other.numFunc
+				&& Objects.equals(razaoSocial, other.razaoSocial) && Objects.equals(responsavel, other.responsavel)
+				&& Objects.equals(segmento, other.segmento) 
 				&& Objects.equals(telefone, other.telefone) && tipoPermissao == other.tipoPermissao;
 	}
 
