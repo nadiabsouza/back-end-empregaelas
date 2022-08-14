@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
+import { CandidatasComponent } from './components/pages/candidatas/candidatas.component';
+import { EmpresasComponent } from './components/pages/empresas/empresas.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { InstitucionalComponent } from './components/pages/institucional/institucional.component';
+import { VagasComponent } from './components/pages/vagas/vagas.component';
+
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'candidatas', component: CandidatasComponent},
+  {path: 'empresas', component: EmpresasComponent},
+  {path: 'institucional', component: InstitucionalComponent},
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'vagas', component:VagasComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
