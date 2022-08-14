@@ -28,21 +28,26 @@
 }
 
 .menu-painel ul {
-    padding: 50px 0;
+    padding: 50px 30px;
 }
 
 .menu-painel ul li {
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 0 30px;
 }
 
 .menu-painel ul li a {
-    padding: 15px 0;
+    padding: 20px 0;
     display: block;
     color: #555;
 }
 
+.menu-painel ul li a:hover {
+    color: #A36986;
+}
+
 .menu-painel ul li a fa-icon {
-    margin-right: 10px;
+    margin-right: 15px;
+    font-size: 20px;
 }
 

@@ -18,6 +18,7 @@ import { EmpresaCarrosselComponent } from './components/empresa-carrossel/empres
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { PainelCandidataComponent } from './components/pages/painel-candidata/painel-candidata.component';
 import { MenuPainelComponent } from './components/menu-painel/menu-painel.component';
+import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoais.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MenuPainelComponent } from './components/menu-painel/menu-painel.compon
     ModalLoginComponent,
     PainelCandidataComponent,
     MenuPainelComponent,
+    DadosPessoaisComponent,
   ],
   imports: [
     BrowserModule,

@@ -111,6 +111,25 @@ span.chaves {
     border: none;
 }
 
+.form-container-acesso form input {
+    height: 40px;
+    border: none !important;
+}
+
+.form-container-acesso form input[type="checkbox"] {
+    height: 15px;
+    margin-right: 10px;
+}
+
+.form-check-input:checked {
+    background: #A36986;
+}
+
+.form-check-label {
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
 a.botao-1 {
     padding: 13px 30px 10px;
     margin-top: 15px;
@@ -162,4 +181,27 @@ div.overlay {
     left: 0;
     right: 0;
     z-index: 0;
+}
+
+.painel-content {
+    padding: 80px 0;
+}
+
+.painel-content h1 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.painel-content form label {
+    font-size: .9em;
+}
+
+.painel-content form input {
+    border: 1px solid #E8E3E3;
+    margin-top: 5px;
+}
+
+.painel-content form select {
+    border: 1px solid #E8E3E3;
+    margin-top: 5px;
 }
