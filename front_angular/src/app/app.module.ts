@@ -11,6 +11,11 @@ import { EmpresasComponent } from './components/pages/empresas/empresas.componen
 import { HomeComponent } from './components/pages/home/home.component';
 import { InstitucionalComponent } from './components/pages/institucional/institucional.component';
 import { VagasComponent } from './components/pages/vagas/vagas.component';
+import { CardVagaComponent } from './components/card-vaga/card-vaga.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CardEmpresaCarrosselComponent } from './components/card-empresa-carrossel/card-empresa-carrossel.component';
+import { EmpresaCarrosselComponent } from './components/empresa-carrossel/empresa-carrossel.component';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +27,16 @@ import { VagasComponent } from './components/pages/vagas/vagas.component';
     EmpresasComponent,
     HomeComponent,
     InstitucionalComponent,
-    VagasComponent
+    VagasComponent,
+    CardVagaComponent,
+    CardEmpresaCarrosselComponent,
+    EmpresaCarrosselComponent,
+    ModalLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

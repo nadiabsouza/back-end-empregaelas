@@ -74,3 +74,64 @@ section#home-sobre {
     background: #E8E3E3;
     padding: 80px 15px;
 }
+section#home-cadastrar {
+    padding: 80px 15px;
+    background: url('/assets/img/home_candidatas.svg') no-repeat 5% bottom, url('/assets/img/home_empresas.svg') no-repeat 95% bottom;
+    background-size: 350px;
+}
+
+section#home-cadastrar h3 {
+    color: #A36986;
+}
+
+section#home-vagas-recentes {
+    background: #EA8D8F;
+    padding: 80px 15px;
+}
+
+section#home-vagas-recentes h2 {
+    color: #fff;
+}
+
+section#home-empresas {
+    background: #E8E3E3;
+    padding: 80px 15px;
+}
+
+section#home-empresas h2 {
+    font-size: 2em;
+    color: #A36986;
+}
+
+section#home-empresas .intro {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cta-home-empresas p {
+    font-size: 1.3em;
+}
+
+section#home-cta-cadastro {
+    background-color: #AE9BBA;
+    background-image: url('/assets/img/emprega_elas_home_cadastre_se_ja.jpg');
+    background-size: 50%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding: 115px 15px;
+}
+
+.home-cta-cadastro-texto {
+    max-width: 400px;
+}
+
+section#home-cta-cadastro h2,
+section#home-cta-cadastro p {
+    color: #fff;
+}
+
+section#home-cta-cadastro .botao-2 {
+    color: #A36986;
+    margin-top: 15px;
+}
+

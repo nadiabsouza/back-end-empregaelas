@@ -80,39 +80,3 @@
     text-decoration: underline;
     margin-top: 20px;
 }
-
-.main-cadastro {
-    padding: 120px 0 0;
-    min-height: unset;
-
-}
-
-.main-cadastro > div {
-    background: url('/assets/img/home_candidatas.svg') no-repeat 0 bottom, url('/assets/img/home_empresas.svg') no-repeat 100% bottom;
-    background-size: 400px;
-    min-height: 750px;
-}
-
-.main-cadastro .container-form {
-    margin-top: 30px;
-}
-
-.main-cadastro .form-container-acesso.container-cadastro {
-    border-radius: 0 5px 5px;
-}
-
-.main-cadastro #cadastro-tabs .nav-link {
-    color: #555;
-    border: 1px solid #E8E3E3;
-}
-
-.main-cadastro #cadastro-tabs .nav-link.active {
-    background: #E8E3E3;
-    border: 1px solid #E8E3E3;
-}
-
-@media screen and (max-width: 1366px) {
-    .main-cadastro > div {
-        background-size: 350px;
-    }
-}
