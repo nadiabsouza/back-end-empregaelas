@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dados-pessoais.component.css']
 })
 export class DadosPessoaisComponent implements OnInit {
+
+  dadosPessoaisIcon = faUser;
 
   constructor() { }
 

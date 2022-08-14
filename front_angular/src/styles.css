@@ -190,6 +190,12 @@ div.overlay {
 .painel-content h1 {
     font-size: 1.5em;
     font-weight: 500;
+    color: #A36986;
+}
+
+.painel-content fa-icon {
+    color: #A36986;
+    margin-right: 10px;
 }
 
 .painel-content form label {
@@ -203,7 +209,7 @@ div.overlay {
     line-height: 1em;
 }
 
-.painel-content form input:focus {
+.painel-content form input:focus , .painel-content form select:focus, .painel-content form textarea:focus {
     box-shadow: 0 0 0 3px #a3698650;
 }
 
