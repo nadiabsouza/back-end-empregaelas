@@ -5,6 +5,7 @@ import { CandidatasComponent } from './components/pages/candidatas/candidatas.co
 import { EmpresasComponent } from './components/pages/empresas/empresas.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { InstitucionalComponent } from './components/pages/institucional/institucional.component';
+import { PainelCandidataComponent } from './components/pages/painel-candidata/painel-candidata.component';
 import { VagasComponent } from './components/pages/vagas/vagas.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'empresas', component: EmpresasComponent},
   {path: 'institucional', component: InstitucionalComponent},
   {path: 'cadastro', component: CadastroComponent},
-  {path: 'vagas', component:VagasComponent}
+  {path: 'vagas', component:VagasComponent},
+  {path: 'painel-candidata', component:PainelCandidataComponent}
 ];
 
 @NgModule({

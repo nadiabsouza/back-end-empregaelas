@@ -16,6 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardEmpresaCarrosselComponent } from './components/card-empresa-carrossel/card-empresa-carrossel.component';
 import { EmpresaCarrosselComponent } from './components/empresa-carrossel/empresa-carrossel.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import { PainelCandidataComponent } from './components/pages/painel-candidata/painel-candidata.component';
+import { MenuPainelComponent } from './components/menu-painel/menu-painel.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
     CardVagaComponent,
     CardEmpresaCarrosselComponent,
     EmpresaCarrosselComponent,
-    ModalLoginComponent
+    ModalLoginComponent,
+    PainelCandidataComponent,
+    MenuPainelComponent,
   ],
   imports: [
     BrowserModule,
