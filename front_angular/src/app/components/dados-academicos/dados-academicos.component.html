@@ -1,0 +1,65 @@
+<div class="painel-content container">
+    <h2 class="raj">
+        <fa-icon [icon]="escolaridadeIcon"></fa-icon>Dados Acadêmicos
+    </h2>
+    <form id="dados-academicos" class="row g3 mt-5">
+        <div class="col-md-6 mb-3">
+            <label for="instituicao-ensino-candidata">Instituição de ensino:</label>
+            <input class="form-control" id="instituicao-ensino-candidata" type="text"
+                name="instituicao-ensino-candidata" placeholder="Ex: USP" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="diploma-candidata">Diploma:</label>
+            <input class="form-control" id="diploma-candidata" type="text" name="diploma-candidata"
+                placeholder="Ex: Bacharelado" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="curso-candidata">Curso:</label>
+            <input class="form-control" id="curso-candidata" type="text" name="curso-candidata"
+                placeholder="Informe o curso" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="inicio-curso-candidata">Início do curso:</label>
+            <input class="form-control" id="inicio-curso-candidata" type="text" name="inicio-curso-candidata"
+                placeholder="Mês e ano - Ex: 01/2001" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="final-curso-candidata">Final do curso:</label>
+            <input class="form-control" id="final-curso-candidata" type="text" name="final-curso-candidata"
+                placeholder="Mês e ano - Ex: 01/2001" required>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="info-curso-candidata" class="form-label">Informações Adicionais:</label>
+            <textarea class="form-control" id="info-curso-candidata" rows="3" name="info-curso-candidata"></textarea>
+        </div>
+        <div class="pt-1">
+            <input type="submit" value="Atualizar Dados Acadêmicos">
+        </div>
+    </form>
+    <hr class="separador">
+    <div class="lista-formacoes row">
+        <h3 class="raj">Minhas Formações</h3>
+        <div class="lista-container d-table w-100">
+            <div class="header">
+                <div class="lista-col">Instituição</div>
+                <div class="lista-col">Formação</div>
+                <div class="lista-col">Curso</div>
+                <div class="lista-col">Início</div>
+                <div class="lista-col">Conclusão</div>
+                <div class="lista-col">Mais Informações</div>
+                <div class="lista-col">Editar</div>
+            </div>
+            <div class="item-list">
+                <div class="lista-col">Nome Instituição</div>
+                <div class="lista-col">Nome Formação</div>
+                <div class="lista-col">Nome Curso</div>
+                <div class="lista-col">Data Início</div>
+                <div class="lista-col">Data Conclusão</div>
+                <div class="lista-col">Mais Informações sobre o curso</div>
+                <div class="lista-col">Ícones</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -22,9 +22,9 @@
     margin-bottom: 10px;
 }
 
-.form-container-acesso form input {
-    height: 40px;
-    border: none !important;
+.form-container-acesso form label.form-check-label {
+    font-size: 0.75em;
+    line-height: 1.5em;
 }
 
 .form-container-acesso form input.senha:after {

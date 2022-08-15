@@ -111,6 +111,25 @@ span.chaves {
     border: none;
 }
 
+.form-container-acesso form input {
+    height: 40px;
+    border: none !important;
+}
+
+form input[type="checkbox"] {
+    height: 15px !important;
+    margin-right: 10px;
+}
+
+.form-check-input:checked {
+    background: #A36986;
+}
+
+.form-check-label {
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
 a.botao-1 {
     padding: 13px 30px 10px;
     margin-top: 15px;
@@ -162,4 +181,101 @@ div.overlay {
     left: 0;
     right: 0;
     z-index: 0;
+}
+
+.painel-content-candidata {
+    padding: 80px 0;
+}
+
+.painel-content h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #A36986;
+}
+
+.painel-content h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #A36986;
+}
+
+.painel-content fa-icon {
+    color: #A36986;
+    margin-right: 10px;
+}
+
+.painel-content form label {
+    font-size: .9em;
+}
+
+.painel-content form input {
+    border: 1px solid #E8E3E3;
+    margin-top: 5px;
+    height: 40px;
+    line-height: 1em;
+}
+
+.painel-content form input:focus , .painel-content form select:focus, .painel-content form textarea:focus {
+    box-shadow: 0 0 0 3px #a3698650;
+}
+
+.painel-content form select {
+    border: 1px solid #E8E3E3;
+    margin-top: 5px;
+    font-size: 0.9em;
+    height: 40px;
+    line-height: 1em;
+}
+
+.painel-content form textarea {
+    border: 1px solid #E8E3E3;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+form input[type='submit'] {
+    background: #A36986;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 3px 30px 0;
+    height: 40px;
+    border: none !important;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+form input[type='submit']:hover {
+    background: #AE9BBA;
+}
+
+form input[type='submit']:focus {
+    border: none !important;
+    box-shadow: 0 0 0 3px #a3698650;
+}
+
+hr.separador {
+    margin: 80px 0;
+}
+
+.lista-container {
+    background: #E8E3E3;
+    border-radius: 5px;
+}
+
+.lista-container > * {
+    display: table-row;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.lista-container .header {
+    font-weight: 600;
+}
+
+.lista-container .lista-col {
+    display: table-cell;
+    padding: 0 15px;
 }
