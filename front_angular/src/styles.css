@@ -183,12 +183,18 @@ div.overlay {
     z-index: 0;
 }
 
-.painel-content {
+.painel-content-candidata {
     padding: 80px 0;
 }
 
-.painel-content h1 {
+.painel-content h2 {
     font-size: 1.5em;
+    font-weight: 500;
+    color: #A36986;
+}
+
+.painel-content h3 {
+    font-size: 1.3em;
     font-weight: 500;
     color: #A36986;
 }
@@ -248,4 +254,28 @@ form input[type='submit']:hover {
 form input[type='submit']:focus {
     border: none !important;
     box-shadow: 0 0 0 3px #a3698650;
+}
+
+hr.separador {
+    margin: 80px 0;
+}
+
+.lista-container {
+    background: #E8E3E3;
+    border-radius: 5px;
+}
+
+.lista-container > * {
+    display: table-row;
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.lista-container .header {
+    font-weight: 600;
+}
+
+.lista-container .lista-col {
+    display: table-cell;
+    padding: 0 15px;
 }

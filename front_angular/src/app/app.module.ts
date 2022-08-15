@@ -20,6 +20,7 @@ import { PainelCandidataComponent } from './components/pages/painel-candidata/pa
 import { MenuPainelComponent } from './components/menu-painel/menu-painel.component';
 import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoais.component';
 import { DadosAcademicosComponent } from './components/dados-academicos/dados-academicos.component';
+import { ExperienciaProfissionalComponent } from './components/experiencia-profissional/experiencia-profissional.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DadosAcademicosComponent } from './components/dados-academicos/dados-ac
     MenuPainelComponent,
     DadosPessoaisComponent,
     DadosAcademicosComponent,
+    ExperienciaProfissionalComponent,
   ],
   imports: [
     BrowserModule,
