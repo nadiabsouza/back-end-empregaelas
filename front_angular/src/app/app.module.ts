@@ -19,6 +19,7 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import { PainelCandidataComponent } from './components/pages/painel-candidata/painel-candidata.component';
 import { MenuPainelComponent } from './components/menu-painel/menu-painel.component';
 import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoais.component';
+import { DadosAcademicosComponent } from './components/dados-academicos/dados-academicos.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoa
     PainelCandidataComponent,
     MenuPainelComponent,
     DadosPessoaisComponent,
+    DadosAcademicosComponent,
   ],
   imports: [
     BrowserModule,
