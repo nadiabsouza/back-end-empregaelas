@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faStairs } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-experiencia-profissional',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencia-profissional.component.css']
 })
 export class ExperienciaProfissionalComponent implements OnInit {
+
+  expIcon = faStairs;
 
   constructor() { }
 

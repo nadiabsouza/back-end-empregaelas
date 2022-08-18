@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +20,8 @@ import { MenuPainelComponent } from './components/menu-painel/menu-painel.compon
 import { DadosPessoaisComponent } from './components/dados-pessoais/dados-pessoais.component';
 import { DadosAcademicosComponent } from './components/dados-academicos/dados-academicos.component';
 import { ExperienciaProfissionalComponent } from './components/experiencia-profissional/experiencia-profissional.component';
+import { CardFormacaoComponent } from './components/card-formacao/card-formacao.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,13 @@ import { ExperienciaProfissionalComponent } from './components/experiencia-profi
     DadosPessoaisComponent,
     DadosAcademicosComponent,
     ExperienciaProfissionalComponent,
+    CardFormacaoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
